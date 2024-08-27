@@ -141,9 +141,18 @@ def get_hangman_data(topic):
     random_number = random.randrange(11)
     game_string = SHEET.worksheet(topic).get_all_values()
     game_string_row = game_string[random_number]
-    #information on how to get rid of empty string values in lists: https://sparkbyexamples.com/python/python-remove-empty-strings-from-list/#:~:text=You%20can%20remove%20empty%20strings%20from%20a%20list%20using%20itertools,''%20as%20the%20filter%20criteria.
-    final_game_string_row = functools.reduce(lambda a, b: a+[b] if b else a, game_string_row, [])
+    final_game_string_row = reduce_empty_values(game_string_row)
     return final_game_string_row
+
+
+def reduce_empty_values(string_list):
+    """
+    Get rid off empty string values in list of shorter
+    movie names. information on how to get rid of empty string values in lists: 
+    https://sparkbyexamples.com/python/python-remove-empty-strings-from-list/#:~:text=You%20can%20remove%20empty%20strings%20from%20a%20list%20using%20itertools,''%20as%20the%20filter%20criteria.
+    """
+    reduced_string_row = functools.reduce(lambda a, b: a+[b] if b else a, string_list, [])
+    return reduced_string_row
 
 def try_again():
     """"""
