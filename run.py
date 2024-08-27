@@ -3,6 +3,8 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import gspread
 import random
+# to get rid of empty string values in list
+import functools
 from google.oauth2.service_account import Credentials
 
 SCOPE =[
@@ -139,8 +141,9 @@ def get_hangman_data(topic):
     random_number = random.randrange(11)
     game_string = SHEET.worksheet(topic).get_all_values()
     game_string_row = game_string[random_number]
-    return game_string_row
-
+    #information on how to get rid of empty string values in lists: https://sparkbyexamples.com/python/python-remove-empty-strings-from-list/#:~:text=You%20can%20remove%20empty%20strings%20from%20a%20list%20using%20itertools,''%20as%20the%20filter%20criteria.
+    final_game_string_row = functools.reduce(lambda a, b: a+[b] if b else a, game_string_row, [])
+    return final_game_string_row
 
 def try_again():
     """"""
@@ -149,8 +152,8 @@ def won_round():
 def end_game():
     """"""
 def main ():
-    game_menu()
-    get_hangman_data("horror")
     """"""
+    #game_menu()
+    #get_hangman_data("horror")
 #game_menu()
-
+get_hangman_data("horror")
