@@ -129,7 +129,16 @@ def choose_game_category():
 def start_game(data):
     """"""
 def get_hangman_data(topic):
-    """"""
+    """
+    Retrieve data from worksheet according to topic 
+    that has been picked by the user.
+    Will pick a random strink from the 
+    """
+    game_string = SHEET.worksheet(topic).get_all_values()
+    game_string_row = game_string[2]
+    print(game_string_row)
+
+
 def try_again():
     """"""
 def won_round():
