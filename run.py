@@ -1,6 +1,19 @@
 # Your code goes here.
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
+import gspread
+from google.oauth2.service_account import Credentials
+
+SCOPE =[
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+]
+
+CREDS = Credentials.from_service_account_file("creds.json")
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open("Hangman-game")
 
 def game_menu():
     """
@@ -91,7 +104,7 @@ def choose_game_category():
     game they want to play
     """
     print("On which topic shall you be quized?\n")
-    print("1. Horror Movies\n2. Thriller Movies\n3. Mystery Movies\n")
+    print("1. Horror Movies\n2. Thriller Movies\n3. Fantasy Movies\n")
     option = input("Enter the number: ")
     while True:
         if int(option) == 1:
@@ -105,7 +118,7 @@ def choose_game_category():
             break
         elif int(option) == 3:
             #will be added once function is written
-            #category = "mystery"
+            #category = "fantasy"
             break
         else:
             print("Well well well.. Once again enter a number between 1 and 3\n")
@@ -113,11 +126,11 @@ def choose_game_category():
     return category
 
 
-def start_game():
+def start_game(data):
     """"""
-def get_hangman_data(data):
+def get_hangman_data(topic):
     """"""
-def try_gain():
+def try_again():
     """"""
 def won_round():
     """"""
@@ -125,5 +138,5 @@ def end_game():
     """"""
 def main ():
     """"""
-game_menu()
+#game_menu()
 
