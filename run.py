@@ -15,7 +15,9 @@ def game_menu():
     user_choice = input("What is your choice: ")
     print(user_choice)
     validate_menu_choice(user_choice)
-    if int(user_choice) == 2:
+    if int(user_choice) == 1:
+        choose_game_category()
+    elif int(user_choice) == 2:
        get_game_instructions() 
 
 
@@ -42,7 +44,7 @@ def get_game_instructions():
     Instructions are displayed as well as the option to 
     return to the main menu
     """
-    instructions = """
+    instructions = r"""
        ____________________________________________
      / \                                            \.
     |   |               How to play                 |.
@@ -82,10 +84,35 @@ def get_game_instructions():
             print("Look who the cat dragged in... Once again to go back to the menu enter 'menu'.\nTo exit enter 'exit'\n")
             instruction_choice_user = input("Enter here: ")
 
-def go_to_main_menu():
-    """"""
 def choose_game_category():
-    """"""
+    """
+    Three different topics in which the game will
+    be played are displayed, user can choose which
+    game they want to play
+    """
+    print("On which topic shall you be quized?\n")
+    print("1. Horror Movies\n2. Thriller Movies\n3. Mystery Movies\n")
+    option = input("Enter the number: ")
+    while True:
+        if int(option) == 1:
+            #will be added once function is written
+            #category = "horror"
+            break
+        elif int(option) == 2:
+            #will be added once function is written
+            #print("load game data...")
+            #category = "thriller"
+            break
+        elif int(option) == 3:
+            #will be added once function is written
+            #category = "mystery"
+            break
+        else:
+            print("Well well well.. Once again enter a number between 1 and 3\n")
+            option = input("Enter here: ")
+    return category
+
+
 def start_game():
     """"""
 def get_hangman_data(data):
@@ -99,3 +126,4 @@ def end_game():
 def main ():
     """"""
 game_menu()
+
