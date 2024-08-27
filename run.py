@@ -2,6 +2,7 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import gspread
+import random
 from google.oauth2.service_account import Credentials
 
 SCOPE =[
@@ -131,12 +132,14 @@ def start_game(data):
 def get_hangman_data(topic):
     """
     Retrieve data from worksheet according to topic 
-    that has been picked by the user.
-    Will pick a random strink from the 
+    that has been picked by the user. Will pick a 
+    random string/movie-name from the chosen worksheet 
+    and return the according list.
     """
+    random_number = random.randrange(11)
     game_string = SHEET.worksheet(topic).get_all_values()
-    game_string_row = game_string[2]
-    print(game_string_row)
+    game_string_row = game_string[random_number]
+    return game_string_row
 
 
 def try_again():
@@ -146,6 +149,8 @@ def won_round():
 def end_game():
     """"""
 def main ():
+    game_menu()
+    get_hangman_data("horror")
     """"""
 #game_menu()
 
