@@ -77,7 +77,7 @@ def get_game_instructions():
         |  If correct the according blank space     |.
         |  will be filled in with the letter.       |.
         |                                           |.
-        |  You have 7 tries.                        |.
+        |  You have 8 lives.                        |.
         |                                           |.
         |  With each mistake the stick figure of    |.
         |  a person being hung will be drawn until  |.
@@ -132,8 +132,6 @@ def choose_game_category():
     return category
 
 
-def start_game(data):
-    """"""
 def get_hangman_data(topic):
     """
     Retrieve data from worksheet according to topic 
@@ -157,6 +155,21 @@ def reduce_empty_values(string_list):
     reduced_string_row = functools.reduce(lambda a, b: a+[b] if b else a, string_list, [])
     return reduced_string_row
 
+
+def play_game(data):
+    """
+    Play the hangman game according to the string to be
+    played with. With each wrong answer the hangman
+    figure will be extended until the live run out.
+    """
+    print("Let's start\nGuess the following word:")
+    #blank_lenght = len(data)
+    blank_string = ""
+    for i in data:
+        blank_string += "_ "
+    print("     " + blank_string)
+
+
 def try_again():
     """"""
 def won_round():
@@ -166,7 +179,9 @@ def end_game():
 def main ():
     """"""
     #game_menu()
-    #get_hangman_data("horror")
+    #get_hangman_data(category)
+    #play_game(reduced_string_row)
 #game_menu()
 #get_hangman_data("horror")
+
 
