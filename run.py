@@ -167,13 +167,15 @@ def play_game(data):
     blank_string = ""
     # add blank _ for the word to guess according to its length
     for i in data:
-        blank_string += "_ "
+        blank_string += "_"
     print("     " + blank_string)
     # check to see if character is in movie title
     j = 0
     hangman_index = 0
+    checked_word = blank_string
     while j < 8:
         guessed_characer = input("Character guess: ")
+        guessed_characer = guessed_characer.lower()
         for i in data:
             is_correct = False
             if guessed_characer in data:
@@ -182,10 +184,16 @@ def play_game(data):
                 is_correct = False
         if is_correct is True:
             print(f"Correct! {guessed_characer} is in the movie title\n")
+            index_checked_word = int(data.index(guessed_characer))
+            checked_word_list = list(checked_word)
+            checked_word_list[index_checked_word] = guessed_characer.upper()
+            checked_word = "".join(checked_word_list)
+            print(checked_word)
         else: 
             print(f"Wrong! {guessed_characer} is not in the movie title\n")
             print("     " + HANGMAN_FIGURES[hangman_index])
             hangman_index += 1
+            print(checked_word)
         j += 1
 
 def try_again():
