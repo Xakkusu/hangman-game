@@ -163,11 +163,25 @@ def play_game(data):
     figure will be extended until the live run out.
     """
     print("Let's start\nGuess the following word:")
-    #blank_lenght = len(data)
     blank_string = ""
+    # add blank _ for the word to guess according to its length
     for i in data:
         blank_string += "_ "
     print("     " + blank_string)
+    # check to see if character is in movie title
+    j = 0
+    while j < 8:
+        guessed_characer = input("Characer guess: ")
+        for i in data:
+            is_correct = False
+            if guessed_characer in data:
+                is_correct = False
+            else: 
+                is_correct = False
+        if is_correct is True:
+            print(f"Correct! {guessed_characer} is in the movie title\n")
+        else: 
+            print(f"Wrong! {guessed_characer} is not in the movie title\n")
 
 
 def try_again():
@@ -184,4 +198,4 @@ def main ():
 #game_menu()
 #get_hangman_data("horror")
 
-
+play_game(["p","s","y","c","h","o"])
