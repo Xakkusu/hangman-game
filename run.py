@@ -32,14 +32,14 @@ def game_menu():
     while valid_choice is False:
         user_choice = input("What is your choice: ")
         print(user_choice)
-        valid_choice = validate_menu_choice(user_choice)
+        valid_choice = validate_menu_choice(user_choice, ["1", "2", "3", "4"])
     if int(user_choice) == 1:
         choose_game_category()
     elif int(user_choice) == 2:
        get_game_instructions() 
 
 
-def validate_menu_choice(data):
+def validate_menu_choice(data, list_to_validate):
     """
     Validate the choice of the user when entering a menu-number
     as an integer between 1 and 4. The try statement raises 
@@ -47,7 +47,7 @@ def validate_menu_choice(data):
     integer or is not between 1 and 4
     """
     try:
-        if data not in ["1", "2", "3", "4"]:
+        if data not in list_to_validate:
             raise ValueError(
                 f"You entered {data}"
             )
