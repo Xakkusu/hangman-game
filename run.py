@@ -28,9 +28,11 @@ def game_menu():
     print("However you ended here really doesn't matter does it, it only matters what you want to do now\n")
     print("Read through the menu and chose one option")
     print(f"1. Start the game!\n2. How to play?\n3. Leaderboard\n4. I am done!\n")
-    user_choice = input("What is your choice: ")
-    print(user_choice)
-    validate_menu_choice(user_choice)
+    valid_choice = False
+    while valid_choice is False:
+        user_choice = input("What is your choice: ")
+        print(user_choice)
+        valid_choice = validate_menu_choice(user_choice)
     if int(user_choice) == 1:
         choose_game_category()
     elif int(user_choice) == 2:
@@ -45,14 +47,15 @@ def validate_menu_choice(data):
     integer or is not between 1 and 4
     """
     try:
-        nmbr = int(data)
-        if nmbr<=0 or nmbr>=5:
+        if data not in ["1", "2", "3", "4"]:
             raise ValueError(
-                f"You entered {nmbr}"
+                f"You entered {data}"
             )
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\nRemember your choice needs to be a number between 1 and 4.\nYou will be redirected to the start of the menu...\n")
-        game_menu()
+        return False
+    else:
+        return True
 
 
 def get_game_instructions():
@@ -149,7 +152,7 @@ def reduce_empty_values(string_list):
     """
     Get rid off empty string values in list of shorter
     movie names. information on how to get rid of empty string values in lists: 
-    https://sparkbyexamples.com/python/python-remove-empty-strings-from-list/#:~:text=You%20can%20remove%20empty%20strings%20from%20a%20list%20using%20itertools,''%20as%20the%20filter%20criteria.
+    https://sparkbyexamples.com/python/python-remove-empty-strings-from-list/
     """
     reduced_string_row = functools.reduce(lambda a, b: a+[b] if b else a, string_list, [])
     return reduced_string_row
@@ -164,5 +167,5 @@ def main ():
     """"""
     #game_menu()
     #get_hangman_data("horror")
-#game_menu()
-get_hangman_data("horror")
+game_menu()
+#get_hangman_data("horror")
