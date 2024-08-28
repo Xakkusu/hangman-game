@@ -52,7 +52,7 @@ def validate_menu_choice(data, list_to_validate):
                 f"You entered {data}"
             )
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\nRemember your choice needs to be a number between 1 and 4.\nYou will be redirected to the start of the menu...\n")
+        print(f"Invalid data: {e}, please try again.\nYou will be redirected to the start of the menu...\n")
         return False
     else:
         return True
@@ -167,5 +167,6 @@ def main ():
     """"""
     #game_menu()
     #get_hangman_data("horror")
-game_menu()
+#game_menu()
 #get_hangman_data("horror")
+
