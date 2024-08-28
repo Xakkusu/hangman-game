@@ -6,6 +6,7 @@ import random
 # to get rid of empty string values in list
 import functools
 from google.oauth2.service_account import Credentials
+from hangman_figure import HANGMAN_FIGURES
 
 SCOPE =[
     "https://www.googleapis.com/auth/spreadsheets",
@@ -171,17 +172,20 @@ def play_game(data):
     # check to see if character is in movie title
     j = 0
     while j < 8:
-        guessed_characer = input("Characer guess: ")
+        hangman_index = 0
+        guessed_characer = input("Character guess: ")
         for i in data:
             is_correct = False
             if guessed_characer in data:
-                is_correct = False
+                is_correct = True
             else: 
                 is_correct = False
         if is_correct is True:
             print(f"Correct! {guessed_characer} is in the movie title\n")
         else: 
             print(f"Wrong! {guessed_characer} is not in the movie title\n")
+            print(HANGMAN_FIGURES[hangman_index])
+            hangman_index =+ 1
 
 
 def try_again():
