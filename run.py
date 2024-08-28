@@ -189,6 +189,7 @@ def play_game(data):
             checked_word_list[index_checked_word] = guessed_characer.upper()
             checked_word = "".join(checked_word_list)
             print(checked_word)
+            j-=1
         else: 
             print(f"Wrong! {guessed_characer} is not in the movie title\n")
             print("     " + HANGMAN_FIGURES[hangman_index])
