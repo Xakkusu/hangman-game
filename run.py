@@ -171,8 +171,8 @@ def play_game(data):
     print("     " + blank_string)
     # check to see if character is in movie title
     j = 0
+    hangman_index = 0
     while j < 8:
-        hangman_index = 0
         guessed_characer = input("Character guess: ")
         for i in data:
             is_correct = False
@@ -184,9 +184,9 @@ def play_game(data):
             print(f"Correct! {guessed_characer} is in the movie title\n")
         else: 
             print(f"Wrong! {guessed_characer} is not in the movie title\n")
-            print(HANGMAN_FIGURES[hangman_index])
-            hangman_index =+ 1
-
+            print("     " + HANGMAN_FIGURES[hangman_index])
+            hangman_index += 1
+        j += 1
 
 def try_again():
     """"""
