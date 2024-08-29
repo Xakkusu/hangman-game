@@ -186,9 +186,10 @@ def play_game(data):
                 is_correct = False
         if is_correct is True:
             print(f"Correct! {guessed_character} is in the movie title\n")
-            index_checked_word = int(data.index(guessed_character))
+            index_checked_word = [i for i, character in enumerate(data) if character == guessed_character]
             checked_word_list = list(checked_word)
-            checked_word_list[index_checked_word] = guessed_character.upper()
+            for i in index_checked_word:
+                checked_word_list[i] = guessed_character.upper()
             checked_word = "".join(checked_word_list)
             print(checked_word)
             j-=1
@@ -200,6 +201,11 @@ def play_game(data):
         guessed_list.append(guessed_character)
         print(f"Your guessed characters so far: {guessed_list}\n")
         j += 1
+    print(data)
+
+def get_all_occurences(title, guess):
+    return [i for i, letter in enumerate(word) if letter == guess]
+
 def try_again():
     """"""
 def won_round():
@@ -213,4 +219,4 @@ def main ():
 game_menu()
 #get_hangman_data("horror")
 
-#play_game(["p","s","y","c","h","o"])
+#play_game(["p","s","p","c","p","o"])
