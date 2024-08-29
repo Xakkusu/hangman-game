@@ -112,22 +112,18 @@ def choose_game_category():
     be played are displayed, user can choose which
     game they want to play
     """
-    print("On which topic shall you be quized?\n")
-    print("1. Horror Movies\n2. Thriller Movies\n3. Fantasy Movies\n")
-    option = input("Enter the number: ")
-    while True:
-        if int(option) == 1:
-            category = "horror"
-            break
-        elif int(option) == 2:
-            category = "thriller"
-            break
-        elif int(option) == 3:
-            category = "fantasy"
-            break
-        else:
-            print("Well well well.. Once again enter a number between 1 and 3\n")
-            option = input("Enter here: ")
+    valid_choice = False
+    while valid_choice is False:
+        print("On which topic shall you be quized?\n")
+        print("1. Horror Movies\n2. Thriller Movies\n3. Fantasy Movies\n")
+        option = input("Enter the number: ")
+        valid_choice = validate_menu_choice(option, ["1", "2", "3"])
+    if int(option) == 1:
+        category = "horror"
+    elif int(option) == 2:
+        category = "thriller"
+    elif int(option) == 3:
+        category = "fantasy"
     return category
 
 
@@ -163,6 +159,7 @@ def play_game(data):
     """
     print("Let's start\nGuess the following word:")
     blank_string = ""
+
     # add blank _ for the word to guess according to its length
     for i in data:
         blank_string += "_"
@@ -172,26 +169,33 @@ def play_game(data):
     j = 0
     hangman_index = 0
     checked_word = blank_string
+
     while j < 8:
         guessed_character = input("Character guess: ")
         guessed_character = guessed_character.lower()
+
         if guessed_character in guessed_list:
             print(f"You already had this character before, your enterd guesses: {guessed_list}\n")
             continue
+
         for i in data:
             is_correct = False
+
             if guessed_character in data:
                 is_correct = True
             else: 
                 is_correct = False
+
         if is_correct is True:
             print(f"Correct! {guessed_character} is in the movie title\n")
             index_checked_word = [i for i, character in enumerate(data) if character == guessed_character]
             checked_word_list = list(checked_word)
+
             for i in index_checked_word:
                 checked_word_list[i] = guessed_character.upper()
             checked_word = "".join(checked_word_list)
             print(checked_word + "\n")
+
             if checked_word == "".join(data).upper():
                 # put this code in the new function as well
                 # try_again()
@@ -199,6 +203,7 @@ def play_game(data):
                 # code for trying again and adding to the scoreboard
                 break
             j-=1
+
         else: 
             print(f"Wrong! {guessed_character} is not in the movie title\n")
             print("     " + HANGMAN_FIGURES[hangman_index])
@@ -208,9 +213,6 @@ def play_game(data):
         print(f"Your guessed characters so far: {guessed_list}\n")
         j += 1
 
-
-def get_all_occurences(title, guess):
-    return [i for i, letter in enumerate(word) if letter == guess]
 
 def try_again():
     """"""
