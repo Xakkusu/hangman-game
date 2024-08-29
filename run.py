@@ -35,7 +35,9 @@ def game_menu():
         print(user_choice)
         valid_choice = validate_menu_choice(user_choice, ["1", "2", "3", "4"])
     if int(user_choice) == 1:
-        choose_game_category()
+        category = choose_game_category()
+        game_data = get_hangman_data(category)
+        play_game(game_data)
     elif int(user_choice) == 2:
        get_game_instructions() 
 
@@ -89,7 +91,7 @@ def get_game_instructions():
         |                                           |.            
         |   ________________________________________|___
         |  /                                            /.
-        \_/____________________________________________/.\n"""
+        \_/____________________________________________/."""
     print(instructions)
     print("To go back to the menu enter 'menu'.\nTo exit enter 'exit'\n")
     instruction_choice_user = input("Enter here: ")
@@ -116,16 +118,16 @@ def choose_game_category():
     while True:
         if int(option) == 1:
             #will be added once function is written
-            #category = "horror"
+            category = "horror"
             break
         elif int(option) == 2:
             #will be added once function is written
             #print("load game data...")
-            #category = "thriller"
+            category = "thriller"
             break
         elif int(option) == 3:
             #will be added once function is written
-            #category = "fantasy"
+            category = "fantasy"
             break
         else:
             print("Well well well.. Once again enter a number between 1 and 3\n")
@@ -168,7 +170,7 @@ def play_game(data):
     # add blank _ for the word to guess according to its length
     for i in data:
         blank_string += "_"
-    print("     " + blank_string)
+    print("     " + blank_string +"\n")
     # check to see if character is in movie title
     j = 0
     hangman_index = 0
@@ -196,7 +198,7 @@ def play_game(data):
             hangman_index += 1
             print(checked_word)
         j += 1
-
+    print(data)
 def try_again():
     """"""
 def won_round():
@@ -208,7 +210,7 @@ def main ():
     #game_menu()
     #get_hangman_data(category)
     #play_game(reduced_string_row)
-#game_menu()
+game_menu()
 #get_hangman_data("horror")
 
-play_game(["p","s","y","c","h","o"])
+#play_game(["p","s","y","c","h","o"])
