@@ -117,16 +117,12 @@ def choose_game_category():
     option = input("Enter the number: ")
     while True:
         if int(option) == 1:
-            #will be added once function is written
             category = "horror"
             break
         elif int(option) == 2:
-            #will be added once function is written
-            #print("load game data...")
             category = "thriller"
             break
         elif int(option) == 3:
-            #will be added once function is written
             category = "fantasy"
             break
         else:
@@ -172,33 +168,38 @@ def play_game(data):
         blank_string += "_"
     print("     " + blank_string +"\n")
     # check to see if character is in movie title
+    guessed_list = []
     j = 0
     hangman_index = 0
     checked_word = blank_string
     while j < 8:
-        guessed_characer = input("Character guess: ")
-        guessed_characer = guessed_characer.lower()
+        guessed_character = input("Character guess: ")
+        guessed_character = guessed_character.lower()
+        if guessed_character in guessed_list:
+            print(f"You already had this character before, your enterd guesses: {guessed_list}\n")
+            continue
         for i in data:
             is_correct = False
-            if guessed_characer in data:
+            if guessed_character in data:
                 is_correct = True
             else: 
                 is_correct = False
         if is_correct is True:
-            print(f"Correct! {guessed_characer} is in the movie title\n")
-            index_checked_word = int(data.index(guessed_characer))
+            print(f"Correct! {guessed_character} is in the movie title\n")
+            index_checked_word = int(data.index(guessed_character))
             checked_word_list = list(checked_word)
-            checked_word_list[index_checked_word] = guessed_characer.upper()
+            checked_word_list[index_checked_word] = guessed_character.upper()
             checked_word = "".join(checked_word_list)
             print(checked_word)
             j-=1
         else: 
-            print(f"Wrong! {guessed_characer} is not in the movie title\n")
+            print(f"Wrong! {guessed_character} is not in the movie title\n")
             print("     " + HANGMAN_FIGURES[hangman_index])
             hangman_index += 1
             print(checked_word)
+        guessed_list.append(guessed_character)
+        print(f"Your guessed characters so far: {guessed_list}\n")
         j += 1
-    print(data)
 def try_again():
     """"""
 def won_round():
@@ -208,8 +209,7 @@ def end_game():
 def main ():
     """"""
     #game_menu()
-    #get_hangman_data(category)
-    #play_game(reduced_string_row)
+    
 game_menu()
 #get_hangman_data("horror")
 
