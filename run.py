@@ -191,7 +191,13 @@ def play_game(data):
             for i in index_checked_word:
                 checked_word_list[i] = guessed_character.upper()
             checked_word = "".join(checked_word_list)
-            print(checked_word)
+            print(checked_word + "\n")
+            if checked_word == "".join(data).upper():
+                # put this code in the new function as well
+                # try_again()
+                print(f"Congrats you figured it out!\nThe correct title is: {checked_word}")
+                # code for trying again and adding to the scoreboard
+                break
             j-=1
         else: 
             print(f"Wrong! {guessed_character} is not in the movie title\n")
@@ -201,7 +207,7 @@ def play_game(data):
         guessed_list.append(guessed_character)
         print(f"Your guessed characters so far: {guessed_list}\n")
         j += 1
-    print(data)
+
 
 def get_all_occurences(title, guess):
     return [i for i, letter in enumerate(word) if letter == guess]
