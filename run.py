@@ -199,8 +199,11 @@ def play_game(data):
             if checked_word == "".join(data).upper():
                 # try_again()
                 print(f"Congrats you figured it out!\nThe correct title is: {checked_word} and have {8-j} lives left\n")
-                print(f"1. Play again\n2. Add lives left to the leaderboard\n3. Exit")
-                round_finished = input("What do you want to do now: ")
+                valid_choice = False
+                while valid_choice is False:
+                    print(f"1. Play again\n2. Add lives left to the leaderboard\n3. Exit")
+                    round_finished = input("What do you want to do now: ")
+                    valid_choice = validate_menu_choice(round_finished, ["1", "2", "3"])
                 if int(round_finished) == 1:
                     try_again()
                 elif int(round_finished) == 2:
