@@ -198,15 +198,17 @@ def play_game(data):
 
             if checked_word == "".join(data).upper():
                 # try_again()
-                print(f"Congrats you figured it out!\nThe correct title is: {checked_word} and have {j} lives left\n")
+                print(f"Congrats you figured it out!\nThe correct title is: {checked_word} and have {8-j} lives left\n")
                 print(f"1. Play again\n2. Add lives left to the leaderboard\n3. Exit")
                 round_finished = input("What do you want to do now: ")
                 if int(round_finished) == 1:
                     try_again()
                 elif int(round_finished) == 2:
                     #code to enter here
+                    print(2)
                 elif int(round_finished) == 3:
                     # exit()
+                    print(2)
 
                 # code for trying again and adding to the scoreboard
                 break
@@ -224,9 +226,12 @@ def play_game(data):
 
 def try_again():
     """
-    
+    At the end of the game the user can restart the game
+    from the choosing topic
     """
-
+    category = choose_game_category()
+    game_data = get_hangman_data(category)
+    play_game(game_data)
 
 
 def won_round():
