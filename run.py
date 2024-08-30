@@ -39,7 +39,9 @@ def game_menu():
         game_data = get_hangman_data(category)
         play_game(game_data)
     elif int(user_choice) == 2:
-       get_game_instructions() 
+        get_game_instructions() 
+    elif int(user_choice) == 4:
+        exit()
 
 
 def validate_menu_choice(data, list_to_validate):
@@ -100,7 +102,7 @@ def get_game_instructions():
             game_menu()
             break
         elif instruction_choice_user.lower() == "exit":
-            #will be added once function is written
+            exit()
             break
         else:
             print("Look who the cat dragged in... Once again to go back to the menu enter 'menu'.\nTo exit enter 'exit'\n")
@@ -201,7 +203,7 @@ def play_game(data):
                 print(f"Congrats you figured it out!\nThe correct title is: {checked_word} and have {8-j} lives left\n")
                 valid_choice = False
                 while valid_choice is False:
-                    print(f"1. Play again\n2. Add lives left to the leaderboard\n3. Exit")
+                    print(f"1. Play again\n2. Add lives left to the leaderboard\n3. Exit\n")
                     round_finished = input("What do you want to do now: ")
                     valid_choice = validate_menu_choice(round_finished, ["1", "2", "3"])
                 if int(round_finished) == 1:
@@ -210,8 +212,7 @@ def play_game(data):
                     #code to enter here
                     print(2)
                 elif int(round_finished) == 3:
-                    # exit()
-                    print(2)
+                    exit()
 
                 # code for trying again and adding to the scoreboard
                 break
@@ -239,8 +240,7 @@ def try_again():
 
 def won_round():
     """"""
-def end_game():
-    """"""
+
 def main ():
     """"""
     #game_menu()
