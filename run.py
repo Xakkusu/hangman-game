@@ -173,8 +173,11 @@ def play_game(data):
     checked_word = blank_string
 
     while j < 8:
-        guessed_character = input("Character guess: ")
-        guessed_character = guessed_character.lower()
+        valid_letter = False
+        while valid_letter is False:
+            guessed_character = input("Character guess: ")
+            guessed_character = guessed_character.lower()
+            valid_letter = validate_letter(guessed_character)
 
         if guessed_character in guessed_list:
             print(f"You already had this character before, your enterd guesses: {guessed_list}\n")
@@ -213,8 +216,6 @@ def play_game(data):
                     print(2)
                 elif int(round_finished) == 3:
                     exit()
-
-                # code for trying again and adding to the scoreboard
                 break
             j-=1
 
@@ -237,6 +238,23 @@ def try_again():
     game_data = get_hangman_data(category)
     play_game(game_data)
 
+
+def validate_letter(data):
+    """
+    Validate the choice of the user when entering a letter
+    to guess the word of the hangman game as only one singular
+    letter and no other character.
+    """
+    try:
+        if not data.isalpha() or len(data) > 1:
+            raise ValueError(
+                f"You entered {data}"
+            )
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\nYou need to enter one letter, try again\n")
+        return False
+    else:
+        return True
 
 def won_round():
     """"""
