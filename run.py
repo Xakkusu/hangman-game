@@ -177,7 +177,7 @@ def play_game(data):
         while valid_letter is False:
             guessed_character = input("Character guess: ")
             guessed_character = guessed_character.lower()
-            valid_letter = validate_letter(guessed_character)
+            valid_letter = validate_letter(guessed_character,1)
 
         if guessed_character in guessed_list:
             print(f"You already had this character before, your enterd guesses: {guessed_list}\n")
@@ -239,31 +239,50 @@ def try_again():
     play_game(game_data)
 
 
-def validate_letter(data):
+def validate_letter(data, number):
     """
     Validate the choice of the user when entering a letter
     to guess the word of the hangman game as only one singular
     letter and no other character.
     """
     try:
-        if not data.isalpha() or len(data) > 1:
+        if not data.isalpha() or len(data) > number:
             raise ValueError(
                 f"You entered {data}"
             )
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\nYou need to enter one letter, try again\n")
+        print(f"Invalid data: {e}, please try again.\nYou need to enter max {number} letter/s only, try again\n")
         return False
     else:
         return True
 
-def won_round():
-    """"""
+
+def add_to_scorboard(data):
+    """
+    User enters username and lives left will be added
+    to the scoreboard.
+    """
+    lives_left = 8-data
+    valid_username = False
+    while valid_username is False:
+            username = input("Enter a username (max. 15 characters, letters only): ")
+            username = username.lower()
+            valid_username = validate_letter(username,15)
+    username_score_row = []
+    username_score_row.append(username)
+    username_score_row. append(lives_left)
+    print(username_score_row)
+    username_worksheet = SHEET.worksheet("leaderboard")
+    username_worksheet.append_row(username_score_row) 
+
+
 
 def main ():
     """"""
     #game_menu()
     
-game_menu()
+#game_menu()
 #get_hangman_data("horror")
 
 #play_game(["p","s","p","c","p","o"])
+add_to_scorboard(5)
