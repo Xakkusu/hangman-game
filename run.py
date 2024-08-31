@@ -5,6 +5,7 @@ import gspread
 import random
 # to get rid of empty string values in list
 import functools
+import pandas as pd
 from google.oauth2.service_account import Credentials
 from hangman_figure import HANGMAN_FIGURES
 
@@ -212,8 +213,7 @@ def play_game(data):
                 if int(round_finished) == 1:
                     try_again()
                 elif int(round_finished) == 2:
-                    #code to enter here
-                    print(2)
+                    add_to_scorboard(j)
                 elif int(round_finished) == 3:
                     exit()
                 break
@@ -271,11 +271,24 @@ def add_to_scorboard(data):
     username_score_row = []
     username_score_row.append(username)
     username_score_row. append(lives_left)
-    print(username_score_row)
     username_worksheet = SHEET.worksheet("leaderboard")
     username_worksheet.append_row(username_score_row) 
+    update_leaderboard(username_worksheet)
 
 
+def update_leaderboard(worksheet):
+    user_data_all = worksheet.get_all_values()
+    columns = user_data_all[0]
+    user_data = user_data_all[1:]
+    user_data_frame = pd.DataFrame(user_data, columns=columns)
+    pd.set_option('display.colheader_justify', 'center')
+    user_data_frame = user_data_frame.sort_values(
+        by=['Lives Left', 'Name'],
+        ascending=[False, True])
+    user_data_frame = user_data_frame.reset_index(drop=True)
+    user_data_frame.index = user_data_frame.index + 1
+
+    print(user_data_frame)
 
 def main ():
     """"""
@@ -285,4 +298,5 @@ def main ():
 #get_hangman_data("horror")
 
 #play_game(["p","s","p","c","p","o"])
-add_to_scorboard(5)
+
+add_to_scorboard(2)
