@@ -33,7 +33,6 @@ def game_menu():
     valid_choice = False
     while valid_choice is False:
         user_choice = input("What is your choice: ")
-        print(user_choice)
         valid_choice = validate_menu_choice(user_choice, ["1", "2", "3", "4"])
     if int(user_choice) == 1:
         category = choose_game_category()
@@ -80,7 +79,7 @@ def get_game_instructions():
         |  Each blank line stands for a character   |.
         |  in a secret word.                        |.    
         |                                           |.
-        |  Guess the letters for each line ony by   |.
+        |  Guess the letters for each line one by   |.
         |  one.                                     |.
         |                                           |.
         |  If correct the according blank space     |.
@@ -212,10 +211,16 @@ def play_game(data):
             j-=1
 
         else: 
-            print(f"Wrong! {guessed_character} is not in the movie title\n")
-            print("     " + HANGMAN_FIGURES[hangman_index])
-            hangman_index += 1
-            print(checked_word)
+            if j == 7:
+                print(f"Wrong! {guessed_character} is not in the movie title\n")
+                print("     " + HANGMAN_FIGURES[hangman_index])
+                print(f"\nYour lives are up!\nThe man is dead...\nThe correct title was {"".join(data).upper()}\n")
+                get_back_to_menu()
+            else:
+                print(f"Wrong! {guessed_character} is not in the movie title\n")
+                print("     " + HANGMAN_FIGURES[hangman_index])
+                hangman_index += 1
+                print(checked_word)
         guessed_list.append(guessed_character)
         print(f"Your guessed characters so far: {guessed_list}\n")
         j += 1
@@ -304,8 +309,5 @@ def main ():
     #game_menu()
     
 game_menu()
-#get_hangman_data("horror")
-
-#play_game(["p","s","p","c","p","o"])
 
 
