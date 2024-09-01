@@ -99,18 +99,7 @@ def get_game_instructions():
         |  /                                            /.
         \_/____________________________________________/."""
     print(instructions)
-    print("To go back to the menu enter 'menu'.\nTo exit enter 'exit'\n")
-    instruction_choice_user = input("Enter here: ")
-    while True:
-        if instruction_choice_user.lower() == "menu":
-            game_menu()
-            break
-        elif instruction_choice_user.lower() == "exit":
-            exit()
-            break
-        else:
-            print("Look who the cat dragged in... Once again to go back to the menu enter 'menu'.\nTo exit enter 'exit'\n")
-            instruction_choice_user = input("Enter here: ")
+    get_back_to_menu()
 
 def choose_game_category():
     """
@@ -292,6 +281,23 @@ def update_leaderboard(worksheet):
     user_data_frame.index = user_data_frame.index + 1
 
     print(user_data_frame)
+    get_back_to_menu()
+
+
+def get_back_to_menu():
+    print("To go back to the menu enter 'menu'.\nTo exit enter 'exit'\n")
+    instruction_choice_user = input("Enter here: ")
+    while True:
+        if instruction_choice_user.lower() == "menu":
+            game_menu()
+            break
+        elif instruction_choice_user.lower() == "exit":
+            exit()
+            break
+        else:
+            print("Look who the cat dragged in... Once again to go back to the menu enter 'menu'.\nTo exit enter 'exit'\n")
+            instruction_choice_user = input("Enter here: ")
+
 
 def main ():
     """"""
