@@ -40,7 +40,10 @@ def game_menu():
         game_data = get_hangman_data(category)
         play_game(game_data)
     elif int(user_choice) == 2:
-        get_game_instructions() 
+        get_game_instructions()
+    elif int(user_choice) == 3:
+        username_worksheet = SHEET.worksheet("leaderboard")
+        update_leaderboard(username_worksheet)
     elif int(user_choice) == 4:
         exit()
 
@@ -294,9 +297,9 @@ def main ():
     """"""
     #game_menu()
     
-#game_menu()
+game_menu()
 #get_hangman_data("horror")
 
 #play_game(["p","s","p","c","p","o"])
 
-add_to_scorboard(2)
+
