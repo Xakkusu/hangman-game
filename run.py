@@ -159,79 +159,87 @@ def play_game(data):
 
     print("Let's start\nGuess the following word:")
     blank_string = ""
-
-    # add blank _ for the word to guess according to its length
     for i in data:
         blank_string += "_"
     print("     " + blank_string +"\n")
-    # check to see if character is in movie title
+
     guessed_list = []
     j = 0
     hangman_index = 0
     checked_word = blank_string
-
     while j < 8:
         valid_letter = False
         while valid_letter is False:
             guessed_character = input("Character guess: ")
             guessed_character = guessed_character.lower()
             valid_letter = validate_letter(guessed_character,1)
-
         if guessed_character in guessed_list:
             print(f"You already had this character before, your enterd guesses: {guessed_list}\n")
             continue
-
         for i in data:
             is_correct = False
-
             if guessed_character in data:
                 is_correct = True
             else: 
                 is_correct = False
-
         if is_correct is True:
-            print(f"Correct! {guessed_character} is in the movie title\n")
-            index_checked_word = [i for i, character in enumerate(data) if character == guessed_character]
-            checked_word_list = list(checked_word)
-
-            for i in index_checked_word:
-                checked_word_list[i] = guessed_character.upper()
-            checked_word = "".join(checked_word_list)
-            print(checked_word + "\n")
-
-            if checked_word == "".join(data).upper():
-                # try_again()
-                os.system('cls||clear')
-
-                print(f"Congrats you figured it out!\nThe correct title is: {checked_word} and have {8-j} lives left\n")
-                valid_choice = False
-                while valid_choice is False:
-                    print(f"1. Play again\n2. Add lives left to the leaderboard\n3. Exit\n")
-                    round_finished = input("What do you want to do now: ")
-                    valid_choice = validate_menu_choice(round_finished, ["1", "2", "3"])
-                if int(round_finished) == 1:
-                    try_again()
-                elif int(round_finished) == 2:
-                    add_to_scorboard(j)
-                elif int(round_finished) == 3:
-                    exit()
-                break
-            j-=1
-
+            guessed_character, checked_word, j = guess_is_correct(guessed_character, data, checked_word, j)
         else: 
-            if j == 7:
-                print(f"Wrong! {guessed_character} is not in the movie title\n")
-                print("     " + HANGMAN_FIGURES[hangman_index])
-                print(f"\nYour lives are up!\nThe man is dead...\nThe correct title was {"".join(data).upper()}\n")
-                get_back_to_menu()
-            else:
-                print(f"Wrong! {guessed_character} is not in the movie title\n")
-                print("     " + HANGMAN_FIGURES[hangman_index])
-                hangman_index += 1
-                print(checked_word)
+            hangman_index = guess_is_wrong(guessed_character, HANGMAN_FIGURES, data, hangman_index, checked_word, j)
         guessed_list.append(guessed_character)
         print(f"Your guessed characters so far: {guessed_list}\n")
         j += 1
+
+
+def guess_is_correct(guessed_character, data, checked_word, j):
+    """
+    Will use correct guess, check how often it is in title, and if
+    it is the final correct guess
+    """
+    print(f"Correct! {guessed_character} is in the movie title\n")
+    index_checked_word = [i for i, character in enumerate(data) if character == guessed_character]
+    checked_word_list = list(checked_word)
+
+    for i in index_checked_word:
+        checked_word_list[i] = guessed_character.upper()
+    checked_word = "".join(checked_word_list)
+    print(checked_word + "\n")
+
+    if checked_word == "".join(data).upper():
+        os.system('cls||clear')
+
+        print(f"Congrats you figured it out!\nThe correct title is: {checked_word} and have {8-j} lives left\n")
+        valid_choice = False
+        while valid_choice is False:
+            print(f"1. Play again\n2. Add lives left to the leaderboard\n3. Exit\n")
+            round_finished = input("What do you want to do now: ")
+            valid_choice = validate_menu_choice(round_finished, ["1", "2", "3"])
+        if int(round_finished) == 1:
+            try_again()
+        elif int(round_finished) == 2:
+            add_to_scorboard(j)
+        elif int(round_finished) == 3:
+            exit()
+    j-=1
+    return guessed_character, checked_word, j
+
+
+def guess_is_wrong(guessed_character, HANGMAN_FIGURES, data, hangman_index, checked_word, j):
+    """
+    Will use wrong guess, check if it is the final correct
+    guess or not & either and game or continue
+    """
+    if j == 7:
+        print(f"Wrong! {guessed_character} is not in the movie title\n")
+        print("     " + HANGMAN_FIGURES[hangman_index])
+        print(f"\nYour lives are up!\nThe man is dead...\nThe correct title was {"".join(data).upper()}\n")
+        get_back_to_menu()
+    else:
+        print(f"Wrong! {guessed_character} is not in the movie title\n")
+        print("     " + HANGMAN_FIGURES[hangman_index])
+        hangman_index += 1
+        print(checked_word)
+    return hangman_index
 
 
 def try_again():
@@ -315,8 +323,9 @@ def get_back_to_menu():
 
 def main ():
     """"""
-    #game_menu()
+    game_menu()
     
-game_menu()
+
+main()
 
 
