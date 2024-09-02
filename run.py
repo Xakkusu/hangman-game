@@ -5,6 +5,7 @@ import gspread
 import random
 # to get rid of empty string values in list
 import functools
+import os
 import pandas as pd
 from google.oauth2.service_account import Credentials
 from hangman_figure import HANGMAN_FIGURES
@@ -26,6 +27,8 @@ def game_menu():
     Menu has options to either start the game, show instrucions, 
     show leaderboard or exit from program.
     """
+    os.system('cls||clear')
+
     print("Hang the Man!")
     print("However you ended here really doesn't matter does it, it only matters what you want to do now\n")
     print("Read through the menu and chose one option")
@@ -71,6 +74,7 @@ def get_game_instructions():
     Instructions are displayed as well as the option to 
     return to the main menu
     """
+    os.system('cls||clear')
     instructions = r"""
        ____________________________________________
      / \                                            \.
@@ -151,6 +155,8 @@ def play_game(data):
     played with. With each wrong answer the hangman
     figure will be extended until the live run out.
     """
+    os.system('cls||clear')
+
     print("Let's start\nGuess the following word:")
     blank_string = ""
 
@@ -195,6 +201,8 @@ def play_game(data):
 
             if checked_word == "".join(data).upper():
                 # try_again()
+                os.system('cls||clear')
+
                 print(f"Congrats you figured it out!\nThe correct title is: {checked_word} and have {8-j} lives left\n")
                 valid_choice = False
                 while valid_choice is False:
@@ -274,6 +282,7 @@ def add_to_scorboard(data):
 
 
 def update_leaderboard(worksheet):
+    os.system('cls||clear')
     user_data_all = worksheet.get_all_values()
     columns = user_data_all[0]
     user_data = user_data_all[1:]
