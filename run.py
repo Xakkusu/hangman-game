@@ -7,6 +7,8 @@ import random
 import functools
 import os
 import pandas as pd
+import colorama
+from colorama import Fore, Back, Style
 from google.oauth2.service_account import Credentials
 from hangman_figure import HANGMAN_FIGURES
 
@@ -77,7 +79,7 @@ def validate_menu_choice(data, list_to_validate):
                 f"You entered {data}"
             )
     except ValueError as e:
-        print(f"\nInvalid data: {e}\nYou will be redirected to enter again...\n")
+        print(Fore.LIGHTRED_EX + f"\nInvalid data: {e}\nYou will be redirected to enter again...\n" + Fore.RESET)
         return False
     else:
         return True
@@ -222,7 +224,7 @@ def guess_is_correct(guessed_character, data, checked_word, j):
     if checked_word == "".join(data).upper():
         os.system('cls||clear')
 
-        print(f"Congrats you figured it out!\nThe correct title is: {checked_word} and have {8-j} lives left\n")
+        print(Back.WHITE + Fore.BLACK + f"Congrats you figured it out!\nThe correct title is: {checked_word} and have {8-j} lives left\n" + Fore.RESET + Back.RESET)
         valid_choice = False
         while valid_choice is False:
             print(f"1. Play again\n2. Add lives left to the leaderboard\n3. Exit\n")
@@ -278,7 +280,7 @@ def validate_letter(data, number):
                 f"You entered {data}"
             )
     except ValueError as e:
-        print(f"\nInvalid data: {e}\nYou need to enter max {number} letter/s, try again\n")
+        print(Fore.LIGHTRED_EX + f"\nInvalid data: {e}\nYou need to enter max {number} letter/s, try again\n" + Fore.RESET)
         return False
     else:
         return True
@@ -332,7 +334,7 @@ def get_back_to_menu():
             exit()
             break
         else:
-            print("\nLook who the cat dragged in... Once again to go back to the menu enter 'menu'.\nTo exit enter 'exit'\n")
+            print(Fore.LIGHTRED_EX + "\nLook who the cat dragged in... Once again to go back to the menu enter 'menu'.\nTo exit enter 'exit'\n" + Fore.RESET)
             instruction_choice_user = input("Enter here: ")
 
 
