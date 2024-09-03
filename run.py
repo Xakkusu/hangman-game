@@ -29,9 +29,23 @@ def game_menu():
     """
     os.system('cls||clear')
 
-    print("Hang the Man!")
-    print("However you ended here really doesn't matter does it, it only matters what you want to do now\n")
-    print("Read through the menu and chose one option")
+    print(r"""
+            ██╗  ██╗ █████╗ ███╗   ██╗ ██████╗     ████████╗██╗  ██╗███████╗
+            ██║  ██║██╔══██╗████╗  ██║██╔════╝     ╚══██╔══╝██║  ██║██╔════╝
+            ███████║███████║██╔██╗ ██║██║  ███╗       ██║   ███████║█████╗  
+            ██╔══██║██╔══██║██║╚██╗██║██║   ██║       ██║   ██╔══██║██╔══╝  
+            ██║  ██║██║  ██║██║ ╚████║╚██████╔╝       ██║   ██║  ██║███████╗
+            ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝        ╚═╝   ╚═╝  ╚═╝╚══════╝
+                                                                            
+            ███╗   ███╗ █████╗ ███╗   ██╗██╗                                
+            ████╗ ████║██╔══██╗████╗  ██║██║                                
+            ██╔████╔██║███████║██╔██╗ ██║██║                                
+            ██║╚██╔╝██║██╔══██║██║╚██╗██║╚═╝                                
+            ██║ ╚═╝ ██║██║  ██║██║ ╚████║██╗                                
+            ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝                                   
+    """)
+    print("\nHowever you ended here really doesn't matter does it? it only matters what you want to do now")
+    print("Read through the menu and choose one option\n")
     print(f"1. Start the game!\n2. How to play?\n3. Leaderboard\n4. I am done!\n")
     valid_choice = False
     while valid_choice is False:
@@ -63,7 +77,7 @@ def validate_menu_choice(data, list_to_validate):
                 f"You entered {data}"
             )
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\nYou will be redirected to the start of the menu...\n")
+        print(f"\nInvalid data: {e}\nYou will be redirected to enter again...\n")
         return False
     else:
         return True
@@ -76,32 +90,32 @@ def get_game_instructions():
     """
     os.system('cls||clear')
     instructions = r"""
-       ____________________________________________
-     / \                                            \.
-    |   |               How to play                 |.
-     \_ |                                           |.
-        |  Each blank line stands for a character   |.
-        |  in a secret word.                        |.    
-        |                                           |.
-        |  Guess the letters for each line one by   |.
-        |  one.                                     |.
-        |                                           |.
-        |  If correct the according blank space     |.
-        |  will be filled in with the letter.       |.
-        |                                           |.
-        |  You have 8 lives.                        |.
-        |                                           |.
-        |  With each mistake the stick figure of    |.
-        |  a person being hung will be drawn until  |.
-        |  the drawing of the hanged man is         |.
-        |  completed & the player lost.             |.
-        |                                           |.
-        |  Try your best & save the man, or not...  |.    
-        |                                           |.            
-        |   ________________________________________|___
-        |  /                                            /.
-        \_/____________________________________________/."""
-    print(instructions)
+          ____________________________________________
+        / \                                            \.
+        |   |               How to play                 |.
+        \_  |                                           |.
+            |  Each blank line stands for a character   |.
+            |  in a secret word.                        |.    
+            |                                           |.
+            |  Guess the letters for each line one by   |.
+            |  one.                                     |.
+            |                                           |.
+            |  If correct the according blank space     |.
+            |  will be filled in with the letter.       |.
+            |                                           |.
+            |  You have 8 lives.                        |.
+            |                                           |.
+            |  With each mistake the stick figure of    |.
+            |  a person being hung will be drawn until  |.
+            |  the drawing of the hanged man is         |.
+            |  completed & the player lost.             |.
+            |                                           |.
+            |  Try your best & save the man, or not...  |.    
+            |                                           |.            
+            |   ________________________________________|___
+            |  /                                            /.
+            \_/____________________________________________/."""
+    print(instructions + "\n")
     get_back_to_menu()
 
 def choose_game_category():
@@ -112,7 +126,7 @@ def choose_game_category():
     """
     valid_choice = False
     while valid_choice is False:
-        print("On which topic shall you be quized?\n")
+        print("\nOn which topic shall you be quized?\n")
         print("1. Horror Movies\n2. Thriller Movies\n3. Fantasy Movies\n")
         option = input("Enter the number: ")
         valid_choice = validate_menu_choice(option, ["1", "2", "3"])
@@ -196,14 +210,14 @@ def guess_is_correct(guessed_character, data, checked_word, j):
     Will use correct guess, check how often it is in title, and if
     it is the final correct guess
     """
-    print(f"Correct! {guessed_character} is in the movie title\n")
+    print(f"\nCorrect! {guessed_character} is in the movie title\n")
     index_checked_word = [i for i, character in enumerate(data) if character == guessed_character]
     checked_word_list = list(checked_word)
 
     for i in index_checked_word:
         checked_word_list[i] = guessed_character.upper()
     checked_word = "".join(checked_word_list)
-    print(checked_word + "\n")
+    print(checked_word)
 
     if checked_word == "".join(data).upper():
         os.system('cls||clear')
@@ -230,12 +244,12 @@ def guess_is_wrong(guessed_character, HANGMAN_FIGURES, data, hangman_index, chec
     guess or not & either and game or continue
     """
     if j == 7:
-        print(f"Wrong! {guessed_character} is not in the movie title\n")
+        print(f"\nWrong! {guessed_character} is not in the movie title\n")
         print("     " + HANGMAN_FIGURES[hangman_index])
         print(f"\nYour lives are up!\nThe man is dead...\nThe correct title was {"".join(data).upper()}\n")
         get_back_to_menu()
     else:
-        print(f"Wrong! {guessed_character} is not in the movie title\n")
+        print(f"\nWrong! {guessed_character} is not in the movie title\n")
         print("     " + HANGMAN_FIGURES[hangman_index])
         hangman_index += 1
         print(checked_word)
@@ -264,7 +278,7 @@ def validate_letter(data, number):
                 f"You entered {data}"
             )
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\nYou need to enter max {number} letter/s only, try again\n")
+        print(f"\nInvalid data: {e}\nYou need to enter max {number} letter/s, try again\n")
         return False
     else:
         return True
@@ -278,7 +292,7 @@ def add_to_scorboard(data):
     lives_left = 8-data
     valid_username = False
     while valid_username is False:
-            username = input("Enter a username (max. 15 characters, letters only): ")
+            username = input("\nEnter a username (max. 15 characters, letters only): ")
             username = username.lower()
             valid_username = validate_letter(username,15)
     username_score_row = []
@@ -302,7 +316,8 @@ def update_leaderboard(worksheet):
     user_data_frame = user_data_frame.reset_index(drop=True)
     user_data_frame.index = user_data_frame.index + 1
 
-    print(user_data_frame)
+    print("     " + user_data_frame)
+    print("\n")
     get_back_to_menu()
 
 
@@ -317,7 +332,7 @@ def get_back_to_menu():
             exit()
             break
         else:
-            print("Look who the cat dragged in... Once again to go back to the menu enter 'menu'.\nTo exit enter 'exit'\n")
+            print("\nLook who the cat dragged in... Once again to go back to the menu enter 'menu'.\nTo exit enter 'exit'\n")
             instruction_choice_user = input("Enter here: ")
 
 
