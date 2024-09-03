@@ -6,6 +6,7 @@ import random
 # to get rid of empty string values in list
 import functools
 import os
+import time
 import pandas as pd
 import colorama
 from colorama import Fore, Back, Style
@@ -47,8 +48,9 @@ def game_menu():
             ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝                                   
     """)
     print("\nHowever you ended here really doesn't matter does it? it only matters what you want to do now")
+    time.sleep(0.15)
     print("Read through the menu and choose one option\n")
-    print(f"1. Start the game!\n2. How to play?\n3. Leaderboard\n4. I am done!\n")
+    print(f"    1. Start the game!\n    2. How to play?\n    3. Leaderboard\n    4. I am done!\n")
     valid_choice = False
     while valid_choice is False:
         user_choice = input("What is your choice: ")
@@ -63,6 +65,7 @@ def game_menu():
         username_worksheet = SHEET.worksheet("leaderboard")
         update_leaderboard(username_worksheet)
     elif int(user_choice) == 4:
+        time.sleep(2)
         exit()
 
 
@@ -129,7 +132,7 @@ def choose_game_category():
     valid_choice = False
     while valid_choice is False:
         print("\nOn which topic shall you be quized?\n")
-        print("1. Horror Movies\n2. Thriller Movies\n3. Fantasy Movies\n")
+        print("    1. Horror Movies\n    2. Thriller Movies\n    3. Fantasy Movies\n")
         option = input("Enter the number: ")
         valid_choice = validate_menu_choice(option, ["1", "2", "3"])
     if int(option) == 1:
@@ -212,7 +215,7 @@ def guess_is_correct(guessed_character, data, checked_word, j):
     Will use correct guess, check how often it is in title, and if
     it is the final correct guess
     """
-    print(f"\nCorrect! {guessed_character} is in the movie title\n")
+    print(Fore.BLACK + Back.WHITE + f"\nCorrect! {guessed_character} is in the movie title" + Fore.RESET + Back.RESET + "\n")
     index_checked_word = [i for i, character in enumerate(data) if character == guessed_character]
     checked_word_list = list(checked_word)
 
@@ -224,10 +227,10 @@ def guess_is_correct(guessed_character, data, checked_word, j):
     if checked_word == "".join(data).upper():
         os.system('cls||clear')
 
-        print(Back.WHITE + Fore.BLACK + f"Congrats you figured it out!\nThe correct title is: {checked_word} and have {8-j} lives left\n" + Fore.RESET + Back.RESET)
+        print(Back.GREEN + Fore.BLACK + f"Congrats you figured it out!\nThe correct title is: {checked_word} and have {8-j} lives left\n" + Fore.RESET + Back.RESET)
         valid_choice = False
         while valid_choice is False:
-            print(f"1. Play again\n2. Add lives left to the leaderboard\n3. Exit\n")
+            print(f"    1. Play again\n    2. Add lives left to the leaderboard\n    3. Exit\n")
             round_finished = input("What do you want to do now: ")
             valid_choice = validate_menu_choice(round_finished, ["1", "2", "3"])
         if int(round_finished) == 1:
@@ -235,6 +238,7 @@ def guess_is_correct(guessed_character, data, checked_word, j):
         elif int(round_finished) == 2:
             add_to_scorboard(j)
         elif int(round_finished) == 3:
+            time.sleep(2)
             exit()
     j-=1
     return guessed_character, checked_word, j
@@ -246,12 +250,12 @@ def guess_is_wrong(guessed_character, HANGMAN_FIGURES, data, hangman_index, chec
     guess or not & either and game or continue
     """
     if j == 7:
-        print(f"\nWrong! {guessed_character} is not in the movie title\n")
+        print(Fore.BLUE + f"\nWrong! {guessed_character} is not in the movie title\n" + Fore.RESET)
         print("     " + HANGMAN_FIGURES[hangman_index])
         print(f"\nYour lives are up!\nThe man is dead...\nThe correct title was {"".join(data).upper()}\n")
         get_back_to_menu()
     else:
-        print(f"\nWrong! {guessed_character} is not in the movie title\n")
+        print(Fore.BLUE + f"\nWrong! {guessed_character} is not in the movie title\n" + Fore.RESET)
         print("     " + HANGMAN_FIGURES[hangman_index])
         hangman_index += 1
         print(checked_word)
@@ -318,8 +322,10 @@ def update_leaderboard(worksheet):
     user_data_frame = user_data_frame.reset_index(drop=True)
     user_data_frame.index = user_data_frame.index + 1
 
-    print("     " + user_data_frame)
-    print("\n")
+    print(Fore.GREEN + f"\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" + Fore.RESET)
+    print(user_data_frame)
+    print(Fore.GREEN + f"\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" + Fore.RESET)
+    #print("\n")
     get_back_to_menu()
 
 
@@ -331,8 +337,8 @@ def get_back_to_menu():
             game_menu()
             break
         elif instruction_choice_user.lower() == "exit":
+            time.sleep(2)
             exit()
-            break
         else:
             print(Fore.LIGHTRED_EX + "\nLook who the cat dragged in... Once again to go back to the menu enter 'menu'.\nTo exit enter 'exit'\n" + Fore.RESET)
             instruction_choice_user = input("Enter here: ")
