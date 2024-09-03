@@ -53,7 +53,7 @@ def game_menu():
     print(f"    1. Start the game!\n    2. How to play?\n    3. Leaderboard\n    4. I am done!\n")
     valid_choice = False
     while valid_choice is False:
-        user_choice = input("What is your choice: ")
+        user_choice = input("What is your choice: \n")
         valid_choice = validate_menu_choice(user_choice, ["1", "2", "3", "4"])
     if int(user_choice) == 1:
         category = choose_game_category()
@@ -133,7 +133,7 @@ def choose_game_category():
     while valid_choice is False:
         print("\nOn which topic shall you be quized?\n")
         print("    1. Horror Movies\n    2. Thriller Movies\n    3. Fantasy Movies\n")
-        option = input("Enter the number: ")
+        option = input("Enter the number: \n")
         valid_choice = validate_menu_choice(option, ["1", "2", "3"])
     if int(option) == 1:
         category = "horror"
@@ -189,7 +189,7 @@ def play_game(data):
     while j < 8:
         valid_letter = False
         while valid_letter is False:
-            guessed_character = input("Character guess: ")
+            guessed_character = input("Character guess: \n")
             guessed_character = guessed_character.lower()
             valid_letter = validate_letter(guessed_character,1)
         if guessed_character in guessed_list:
@@ -231,7 +231,7 @@ def guess_is_correct(guessed_character, data, checked_word, j):
         valid_choice = False
         while valid_choice is False:
             print(f"    1. Play again\n    2. Add lives left to the leaderboard\n    3. Exit\n")
-            round_finished = input("What do you want to do now: ")
+            round_finished = input("What do you want to do now: \n")
             valid_choice = validate_menu_choice(round_finished, ["1", "2", "3"])
         if int(round_finished) == 1:
             try_again()
@@ -298,7 +298,7 @@ def add_to_scorboard(data):
     lives_left = 8-data
     valid_username = False
     while valid_username is False:
-            username = input("\nEnter a username (max. 15 characters, letters only): ")
+            username = input("\nEnter a username (max. 15 characters, letters only): \n")
             username = username.lower()
             valid_username = validate_letter(username,15)
     username_score_row = []
@@ -331,7 +331,7 @@ def update_leaderboard(worksheet):
 
 def get_back_to_menu():
     print("To go back to the menu enter 'menu'.\nTo exit enter 'exit'\n")
-    instruction_choice_user = input("Enter here: ")
+    instruction_choice_user = input("Enter here: \n")
     while True:
         if instruction_choice_user.lower() == "menu":
             game_menu()
@@ -341,7 +341,7 @@ def get_back_to_menu():
             exit()
         else:
             print(Fore.LIGHTRED_EX + "\nLook who the cat dragged in... Once again to go back to the menu enter 'menu'.\nTo exit enter 'exit'\n" + Fore.RESET)
-            instruction_choice_user = input("Enter here: ")
+            instruction_choice_user = input("Enter here: \n")
 
 
 def main ():
