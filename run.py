@@ -32,7 +32,7 @@ def game_menu():
     """
     os.system('cls||clear')
 
-    print("""
+    print(r"""
         ██╗  ██╗ █████╗ ███╗   ██╗ ██████╗     ████████╗██╗  ██╗███████╗
         ██║  ██║██╔══██╗████╗  ██║██╔════╝     ╚══██╔══╝██║  ██║██╔════╝
         ███████║███████║██╔██╗ ██║██║  ███╗       ██║   ███████║█████╗  
@@ -93,19 +93,16 @@ def get_game_instructions():
     return to the main menu
     """
     os.system('cls||clear')
-    instructions = """
+    instructions = r"""
           ____________________________________________________
         /  \                                                   \.
-       |    |               How to play                         |.
+       |    |                   How to play                     |.
         \_  |                                                   |.
-            |  Each blank line stands for a character of a title|.
-            |                                                   |.
-            |  Guess the letters for each line one by one.      |.
+            |  Guess the title of a movie one character by one  |.
+            |  Each blank line stands for one character         |.
             |                                                   |.
             |  If correct the according blank space will be     |.
-            |  filled in with the letter.                       |.
-            |                                                   |.
-            |  You have 8 lives.                                |.
+            |  filled in with the letter, you have 8 lives      |.
             |                                                   |.
             |  With each mistake the stick figure of a person   |.
             |  being hung will be drawn until the drawing of the|.
