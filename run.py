@@ -32,7 +32,7 @@ def game_menu():
     """
     os.system('cls||clear')
 
-    print(r"""
+    print("""
         ██╗  ██╗ █████╗ ███╗   ██╗ ██████╗     ████████╗██╗  ██╗███████╗
         ██║  ██║██╔══██╗████╗  ██║██╔════╝     ╚══██╔══╝██║  ██║██╔════╝
         ███████║███████║██╔██╗ ██║██║  ███╗       ██║   ███████║█████╗  
@@ -49,7 +49,7 @@ def game_menu():
     """)
     time.sleep(0.15)
     print("Read through the menu and choose one option\n")
-    print(f"    1. Start the game!\n    2. How to play?\n    3. Leaderboard\n    4. I am done!\n")
+    print(f"    1. Start the game!\n    2. How to play?\n    3. Leaderboard\n    4. I am done!")
     valid_choice = False
     while valid_choice is False:
         user_choice = input("What is your choice: \n")
@@ -93,32 +93,28 @@ def get_game_instructions():
     return to the main menu
     """
     os.system('cls||clear')
-    instructions = r"""
-          ____________________________________________
-        /  \                                           \.
-       |    |               How to play                 |.
-        \_  |                                           |.
-            |  Each blank line stands for a character   |.
-            |  in a secret word.                        |.    
-            |                                           |.
-            |  Guess the letters for each line one by   |.
-            |  one.                                     |.
-            |                                           |.
-            |  If correct the according blank space     |.
-            |  will be filled in with the letter.       |.
-            |                                           |.
-            |  You have 8 lives.                        |.
-            |                                           |.
-            |  With each mistake the stick figure of    |.
-            |  a person being hung will be drawn until  |.
-            |  the drawing of the hanged man is         |.
-            |  completed & the player lost.             |.
-            |                                           |.
-            |  Try your best & save the man, or not...  |.    
-            |                                           |.            
-            |   ________________________________________|___
-            |  /                                            /.
-            \_/____________________________________________/."""
+    instructions = """
+          ____________________________________________________
+        /  \                                                   \.
+       |    |               How to play                         |.
+        \_  |                                                   |.
+            |  Each blank line stands for a character of a title|.
+            |                                                   |.
+            |  Guess the letters for each line one by one.      |.
+            |                                                   |.
+            |  If correct the according blank space will be     |.
+            |  filled in with the letter.                       |.
+            |                                                   |.
+            |  You have 8 lives.                                |.
+            |                                                   |.
+            |  With each mistake the stick figure of a person   |.
+            |  being hung will be drawn until the drawing of the|.
+            |  hanged man is completed & the player lost.       |.
+            |                                                   |.
+            |  Try your best & save the man, or not...          |.         
+            |   ________________________________________________|___
+            |  /                                                    /.
+            \_/____________________________________________________/."""
     print(instructions + "\n")
     get_back_to_menu()
 
