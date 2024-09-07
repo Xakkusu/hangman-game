@@ -1,32 +1,94 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Hangman Game
 
-Welcome,
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **May 14, 2024**
 
-## Reminders
+## Contents
+- [SITE OWNER GOALS](#site-owner-goals)
+- [USER EXPERIENCE (UX)](#user-experience-ux)
+- [WIREFRAMES](#wireframes)
+- [Flow Chart / Decision Tree](#flow-chart--decision-tree)
+- [FEATURES](#features)
+- [TESTING](#testing)
+    - [User Stories Testing](#user-stories-testing)
+    - [Fixed Bugs](#fixed-bugs)
+    - [Known Bugs](#known-bugs)
+- [TECHNOLOGIES USED](#technologies-used)
+    - [Languages](#languages)
+    - [Frameworks, Libraries and Programs used](#frameworks-libraries-and-programs-used)
+- [DEPLOYMENT](#deployment)
+- [CREDITS](#credits)
+    - [Media](#media)
+    - [Resources](#resources)
+- [ACKNOWLEDGEMENTS](#acknowledgements)
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
 
-## Creating the Heroku app
+## SITE OWNER GOALS
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
 
-1. `heroku/python`
-2. `heroku/nodejs`
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## USER EXPERIENCE (UX)
+#### First Time User Goals
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
-Connect your GitHub repository and deploy as normal.
+#### Returning User Goals
 
-## Constraints
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+#### Frequent User Goals
 
----
 
-Happy coding!
+
+## WIREFRAMES
+
+
+
+## Flow Chart / Decision Tree
+
+
+### Final Look
+
+
+
+## FEATURES
+
+## Data Model
+
+## TESTING
+
+
+### User Stories Testing
+#### First Time User Goals
+
+
+#### Returning User Goals
+
+
+#### Frequent User Goals
+
+
+### Fixed Bugs
+1. 
+
+### Known Bugs
+
+
+
+## TECHNOLOGIES USED
+### Languages
+
+
+### Frameworks, Libraries and Programs used
+
+
+
+## DEPLOYMENT
+
+
+
+## CREDITS
+### Media
+
+
+### Resources
+
+
+## ACKNOWLEDGEMENTS
