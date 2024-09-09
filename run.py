@@ -331,6 +331,10 @@ def add_to_scorboard(data):
 
 
 def update_leaderboard(worksheet):
+    """
+    Update the leaderboard according to the score
+    and the name. Display it accordingly.
+    """
     os.system('cls||clear')
     user_data_all = worksheet.get_all_values()
     columns = user_data_all[0]
@@ -350,6 +354,10 @@ def update_leaderboard(worksheet):
 
 
 def get_back_to_menu():
+    """
+    When there is a non numeric menu the user can either
+    go to the menu or exit the program.
+    """
     print("To go back to the menu enter 'menu'.\nTo exit enter 'exit'\n")
     instruction_choice_user = input("Enter here: \n")
     while True:
@@ -368,7 +376,9 @@ def get_back_to_menu():
 
 
 def main():
-    """"""
+    """
+    Runs the whole program by loading the game menu.
+    """
     game_menu()
 
 
