@@ -31,6 +31,20 @@ Interested? Then check it out here: [Hang the man!](https://hang-the-man-3409a28
 - [ACKNOWLEDGEMENTS](#acknowledgements)
 
 ## HOW TO PLAY
+- The user can choose to play, see instructions, see leaderboard or exit the program
+    - After viewing the instructions or leaderboard the user can return to the menu or exit the program
+- The user can choose to guess movie titles from the following categories: Horror, Thriller & Fantasy
+- The user has 8 lives, hence 8 chances, to guess the word
+- A hint is given at the beginning of the game as blank lines for each letter in the word
+- The user has to guess one character at the time
+    - If the character is correct the hint will update with the location of the correct character and the user can guess again
+    - If the character is wrong the a stick figure will appear with a "wrong guess"-statement and the user can guess again
+    - The stick figure will continue to grow into a hanged man the more wrong guesses were placed
+- When all characters are guessed a winning statement is shown and the user can decide on the following:
+    - Playing the game again
+    - Saving a username and score to the leaderboard
+    - exit the programm
+- When all lives are up a loosing statement is shown and the user can decide to return to the menu or exit the program
 
 
 ## SITE OWNER GOALS
