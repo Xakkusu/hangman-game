@@ -39,13 +39,24 @@ Interested? Then check it out here: [Hang the man!](https://hang-the-man-3409a28
 
 ## USER EXPERIENCE (UX)
 #### First Time User Goals
+- I want to take a a word guessing quiz - hangman
+- I want to understand the the program, its structure and how to play the game
+- I want the quiz to be easy to use and navigate
+- I want to be able to be tested on different categories
+- I want to see how well I am doing during the game
+- I want to take the quiz whenever, wherever
 
 
 #### Returning User Goals
-
+- I want to be able to be tested on different categories
+- I want to be able to restart the game without reloading the page
+- I want to get different words to be tested on when retaking the game
 
 #### Frequent User Goals
-
+- I want to be able to be tested on different categories
+- I want to be able to restart the game without reloading the page
+- I want to get different words to be tested on when retaking the game
+- I want to save my best scores to a leaderboard to compete with other users
 
 
 ## WIREFRAMES
