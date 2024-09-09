@@ -88,7 +88,8 @@ The flow chart was created with [Lucid Chart](https://www.lucidchart.com/pages/)
 I wanted to show that winning and lossing the game isn't really an ending step as the user can still decide what to do afterwwards. This way the user has a lot of freedom and is not forced by the program on which route to take.
 
 ### Final Look
-
+Final Look of the website before any inpput has been entered:
+<img src="docs/hang-the-man-final-look.png" width="90%" alt="Website with Python terminal at the beginning of the programm">
 
 
 ## FEATURES
