@@ -111,7 +111,7 @@ Final Look of the website/program before any input by the user has been entered:
 
 ### How To Play?
 ![How To Play Section Image](docs/features/how-to-play-feature.png)
-- When the user chose option 2, the terminal will be cleared and the instructions with how this game will be played are displayed.
+- If the user chooses option 2, the terminal will be cleared and the instructions with how this game will be played are displayed.
 - To, again, leave a more visually pleasing for the user the instructions are bordered by [ASCII-Art](https://www.asciiart.eu/art-and-design/borders) that should look familiar to a scroll.
 - Below the instructions the user can once again choose to return to the main menu or exit the program.
 
@@ -120,6 +120,18 @@ Final Look of the website/program before any input by the user has been entered:
 - Unlike the above validator this validator takes full words as input (lower- or uppercase are fine) and returns an error message if the wrong data was entered.
 - This was simply done to show that I am able to code various types of input validations.
 - The error message, as all error messages in this game, are printed out in red to indicate to the user that an error occured and their inputed data was invalid.
+
+### Leaderboard
+![Leaderboard Section Image](docs/features/leaderboard-feature.png)
+- If the user chooses option 3, the terminal will be cleared and the leaderboard will be displayed.
+- The leaderboard is ordered according to how many lives are left and then alphabetically according to the username.
+- This was done by using the open source data analysis toolkit pandas. 
+- The leaderboard spreadsheet is accessed and used to keep the data of the user (username and score) via an API.
+- Below the leaderboard the user can once again choose to return to the main menu or exit the program.
+
+#### How To Play - Input Validation
+![Leaderboard Input Validation Image](docs/features/leaderboard-input-validation-feature.png)
+- The exact same as the How To Play - Input Validation
 
 ## DATA MODEL
 
