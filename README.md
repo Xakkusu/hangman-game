@@ -10,6 +10,7 @@ Interested? Then check it out here: [Hang the man!](https://hang-the-man-3409a28
 ![Hang the man! Am I Responsive Image](docs/am-i-responsive-hangman.png)
 
 ## Contents
+- [HOW TO PLAY](#how-to-play)
 - [SITE OWNER GOALS](#site-owner-goals)
 - [USER EXPERIENCE (UX)](#user-experience-ux)
 - [WIREFRAMES](#wireframes)
@@ -28,6 +29,8 @@ Interested? Then check it out here: [Hang the man!](https://hang-the-man-3409a28
     - [Media](#media)
     - [Resources](#resources)
 - [ACKNOWLEDGEMENTS](#acknowledgements)
+
+## HOW TO PLAY
 
 
 ## SITE OWNER GOALS
@@ -64,7 +67,11 @@ Interested? Then check it out here: [Hang the man!](https://hang-the-man-3409a28
 
 
 ## FLOW CHART / DECISION TREE
+![Hang the man! Flow Chart Image](docs/lucid-chart.png)
 
+The flow chart was created with [Lucid Chart](https://www.lucidchart.com/pages/) to help easily visualizing the flow of the program while passing each step. Like most decision trees some steps repeat themselves while other are final or starting points.
+
+I wanted to show that winning and lossing the game isn't really an ending step as the user can still decide what to do afterwwards. This way the user has a lot of freedom and is not forced by the program on which route to take.
 
 ### Final Look
 
