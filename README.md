@@ -1,6 +1,13 @@
 # Hangman Game
+This Hangman game is a simple word-guessing game according to the general established rules of a hangman game. The user can choose words from different types of movie titles. They than have to to guess a random title one character at the time. The user has 8 lives, correlating with a stick figure image which will have more sticks "drawn" onto the more lives are lost due to wrong guesses. The user either guesses the word correctly or, when there are no more lives left, looses and the full figure of the hanged man is shown.
 
+Depending on how much knowdledge the user has about movie title the user will have it easiert or harder in this game. However this puzzle is meant to improve the user's critical thinking and problem solving abilities before they run out of lives.
 
+There are visual clues as each line of the word to guess represents one character and the correct guessed ones will appear on the according position in the word. Moreover, the wrong guesses will be shown in a list and do not count as a second live once they have been entered.
+
+Interested? Then check it out here: [Hang the man!](https://hang-the-man-3409a28c593c.herokuapp.com/)
+
+![Hang the man! Am I Responsive Image](docs/am-i-responsive-hangman.png)
 
 ## Contents
 - [SITE OWNER GOALS](#site-owner-goals)
@@ -77,7 +84,7 @@
 
 
 ### Frameworks, Libraries and Programs used
-
+- [Am I Responsive](https://ui.dev/amiresponsive) Used for the mockup image.
 
 
 ## DEPLOYMENT
