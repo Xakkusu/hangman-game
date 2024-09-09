@@ -13,8 +13,9 @@ Interested? Then check it out here: [Hang the man!](https://hang-the-man-3409a28
 - [SITE OWNER GOALS](#site-owner-goals)
 - [USER EXPERIENCE (UX)](#user-experience-ux)
 - [WIREFRAMES](#wireframes)
-- [Flow Chart / Decision Tree](#flow-chart--decision-tree)
+- [FLOW CHART / DECISION TREE](#flow-chart--decision-tree)
 - [FEATURES](#features)
+- [DATA MODEL](#data-model)
 - [TESTING](#testing)
     - [User Stories Testing](#user-stories-testing)
     - [Fixed Bugs](#fixed-bugs)
@@ -30,7 +31,10 @@ Interested? Then check it out here: [Hang the man!](https://hang-the-man-3409a28
 
 
 ## SITE OWNER GOALS
-
+- to provide the user with a fun short word-guessing game with different categories to choose from
+- to prvide the user a a quick and challenging activity
+- to prvide the user with a simple program that is easy to navigate through
+- to provide the user with the option to save their score with their username, competing with other users for the first place
 
 
 ## USER EXPERIENCE (UX)
@@ -48,7 +52,7 @@ Interested? Then check it out here: [Hang the man!](https://hang-the-man-3409a28
 
 
 
-## Flow Chart / Decision Tree
+## FLOW CHART / DECISION TREE
 
 
 ### Final Look
@@ -57,7 +61,7 @@ Interested? Then check it out here: [Hang the man!](https://hang-the-man-3409a28
 
 ## FEATURES
 
-## Data Model
+## DATA MODEL
 
 ## TESTING
 
