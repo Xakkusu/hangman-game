@@ -30,6 +30,7 @@ Interested? Then check it out here: [Hang the man!](https://hang-the-man-3409a28
     - [Resources](#resources)
 - [ACKNOWLEDGEMENTS](#acknowledgements)
 
+
 ## HOW TO PLAY
 - The user can choose to play, see instructions, see leaderboard or exit the program
     - After viewing the instructions or leaderboard the user can return to the menu or exit the program
@@ -88,11 +89,20 @@ The flow chart was created with [Lucid Chart](https://www.lucidchart.com/pages/)
 I wanted to show that winning and lossing the game isn't really an ending step as the user can still decide what to do afterwwards. This way the user has a lot of freedom and is not forced by the program on which route to take.
 
 ### Final Look
-Final Look of the website before any inpput has been entered:
-<img src="docs/hang-the-man-final-look.png" width="90%" alt="Website with Python terminal at the beginning of the programm">
+Final Look of the website/program before any input by the user has been entered:
+<img src="docs/hang-the-man-final-look.png" alt="Website with Python terminal at the beginning of the programm">
 
 
 ## FEATURES
+### Game Title
+![Game Title Images](docs/features/title-feature.png)
+- An inviting title stlye was used so the user will not be too appalled by the basic black/white terminal design. Especially if the user has no knowledge of terminals they would still know that this is no error screen or that their pc didn't just crash.
+ - The style was created by using [ASCII text](https://www.asciiart.eu/text-to-ascii-art) and applying one of their fonts on my title.
+
+### Game Menu
+![Game Menu Image](docs/features/game-menu-feature.png)
+- The Game menu is made up of 4 options: Start the game, How to Play, Leaderboard and I am done.
+- This simple set-up is common for most smaller games and quizzes, therefore most useres should be familiar with its structure.
 
 ## DATA MODEL
 
