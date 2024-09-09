@@ -104,6 +104,23 @@ Final Look of the website/program before any input by the user has been entered:
 - The Game menu is made up of 4 options: Start the game, How to Play, Leaderboard and I am done.
 - This simple set-up is common for most smaller games and quizzes, therefore most useres should be familiar with its structure.
 
+#### Game Menu - Input Validation
+![Game Menu Input Validation Image](docs/features/menu-input-validation-feature.png)
+- If the user does not enter a number between 1 and 4 an Error Message will appear. This message repeats the input from the user and states that they will be given the chance to enter an input again.
+- This message, as all error messages in this game, are printed out in red to indicate to the user that an error occured and their inputed data was invalid.
+
+### How To Play?
+![How To Play Section Image](docs/features/how-to-play-feature.png)
+- When the user chose option 2, the terminal will be cleared and the instructions with how this game will be played are displayed.
+- To, again, leave a more visually pleasing for the user the instructions are bordered by [ASCII-Art](https://www.asciiart.eu/art-and-design/borders) that should look familiar to a scroll.
+- Below the instructions the user can once again choose to return to the main menu or exit the program.
+
+#### How To Play - Input Validation
+![How To Play Input Validation Image](docs/features/htp-input-validation-feature.png)
+- Unlike the above validator this validator takes full words as input (lower- or uppercase are fine) and returns an error message if the wrong data was entered.
+- This was simply done to show that I am able to code various types of input validations.
+- The error message, as all error messages in this game, are printed out in red to indicate to the user that an error occured and their inputed data was invalid.
+
 ## DATA MODEL
 
 ## TESTING
