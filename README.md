@@ -16,6 +16,9 @@ Interested? Then check it out here: [Hang the man!](https://hang-the-man-3409a28
 - [FLOW CHART / DECISION TREE](#flow-chart--decision-tree)
 - [FEATURES](#features)
 - [TESTING](#testing)
+    - [PEP8](#pep8)
+    - [Input Testing](#input-testing)
+    - [Browser Testing](#browser-testing)
     - [User Stories Testing](#user-stories-testing)
     - [Fixed Bugs](#fixed-bugs)
     - [Known Bugs](#known-bugs)
@@ -245,8 +248,17 @@ No errors or warnings.
 </details>
 
 
-
 ### Input Testing
+As shown in the feature section above all input fields were manually tested by me and returned the correct output depending if the input was valid or not.
+All input fields only accepted the type of data that is needed to advance in the code to the next step. This has been tested in Gitpod IDF environment and on the deployed website.
+
+
+### Browser Testing
+The website was successfully tested on the following browsers:
+- Google Chrome
+- Mozilla Firefox
+- Safari
+- Microsoft Edge
 
 ### User Stories Testing
 #### First Time User Goals
