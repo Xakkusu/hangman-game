@@ -64,6 +64,7 @@ def game_menu():
         update_leaderboard(username_worksheet)
     elif int(user_choice) == 4:
         time.sleep(2)
+        print("\nbye bye...")
         exit()
 
 
@@ -253,6 +254,7 @@ def guess_is_correct(guessed_character, data, checked_word, j):
             add_to_scorboard(j)
         elif int(round_finished) == 3:
             time.sleep(2)
+            print("\nbye bye...")
             exit()
     j -= 1
     return guessed_character, checked_word, j
@@ -366,6 +368,7 @@ def get_back_to_menu():
             break
         elif instruction_choice_user.lower() == "exit":
             time.sleep(2)
+            print("\nbye bye...")
             exit()
         else:
             print(Fore.LIGHTRED_EX + "\nLook who the cat dragged in..."
