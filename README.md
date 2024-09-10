@@ -150,8 +150,20 @@ Final Look of the website/program before any input by the user has been entered:
 - This list is converted into the underlined hint.
 - The user is then asked to enter their first character guess.
 
+#### Correct Answer - Lives Left
+![Correct Answer - Lives Left Image](docs/features/correct-answer-feature.png)
+- When the player enters a correct guess a statement that their answer was correct will be displayed.
+- The hint will be updated with the position of the guess. If the guess occurs multiple times in the word, it will be shown accordingly in the hint.
+- Below that a list will appear to show which characters have been guessed so far. This list is indedpendent if the answer was wrong or right, this is solely done to show the user what was already guessed in case they have forgotten.
+- The updated hint will be in uppercase to give the user a better visualization of what movie title needs to be find out.
+#### Wrong Answer - Lives Left
+![Wrong Answer - Lives Left Image](docs/features/wrong-answer-feature.png)
+- When the player enters a wrong guess a statement that their answer was wrong will be displayed.
+- For the first wrong guess the hangman figure will be displayed for the first time.
 
-
+![Wrong Answer 2 - Lives Left Image](docs/features/wrong-answer2-feature.png)
+- The more wrong guesses the user makes the more sticks will be "drawn" on to the figure.
+- The hint remains the same, the guesses character list will be updated.
 
 ## DATA MODEL
 
