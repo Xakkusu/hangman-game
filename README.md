@@ -13,7 +13,6 @@ Interested? Then check it out here: [Hang the man!](https://hang-the-man-3409a28
 - [HOW TO PLAY](#how-to-play)
 - [SITE OWNER GOALS](#site-owner-goals)
 - [USER EXPERIENCE (UX)](#user-experience-ux)
-- [WIREFRAMES](#wireframes)
 - [FLOW CHART / DECISION TREE](#flow-chart--decision-tree)
 - [FEATURES](#features)
 - [DATA MODEL](#data-model)
@@ -77,10 +76,6 @@ Interested? Then check it out here: [Hang the man!](https://hang-the-man-3409a28
 - I want to save my best scores to a leaderboard to compete with other users
 
 
-## WIREFRAMES
-
-
-
 ## FLOW CHART / DECISION TREE
 ![Hang the man! Flow Chart Image](docs/lucid-chart.png)
 
@@ -141,6 +136,19 @@ Final Look of the website/program before any input by the user has been entered:
 ![Categories Input Validation Image](docs/features/categories-input-validation-feature.png)
 - If the user does not enter a number between 1 and 3 an Error Message will appear. This message repeats the input from the user and states that they will be given the chance to enter an input again.
 - This message, as all error messages in this game, are printed out in red to indicate to the user that an error occured and their inputed data was invalid.
+
+### Game Section
+![Game Section Image](docs/features/game-feature.png)
+- No matter which category the user chooses, the terminal will be cleared and a hint of lines appears.
+
+![Catgeory Worksheet Image](docs/features/game-categories-worksheet-feature.png)
+- When the user enters the catageory Google Sheets were used to access the according sheet to the chosen category.
+
+![Horror Worksheet Image](docs/features/game-horror-worksheet-feature.png)
+- This is done by Google Sheets APIs though the Goggle Clout Platform.
+- The data is stored in each sheet will be randomly chosen an stored in a variable as a list.
+- This list is converted into the underlined hint.
+- The user is then asked to enter their first character guess.
 
 
 
