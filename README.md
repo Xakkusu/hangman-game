@@ -163,7 +163,26 @@ Final Look of the website/program before any input by the user has been entered:
 
 ![Wrong Answer 2 - Lives Left Image](docs/features/wrong-answer2-feature.png)
 - The more wrong guesses the user makes the more sticks will be "drawn" on to the figure.
+- As most people are familiar with the game it was chosen to not write how many lives are left with each wrong guess, as it is visualized through the stick figure.
 - The hint remains the same, the guesses character list will be updated.
+
+#### Repeated Answer
+![Repeated Answer Image](docs/features/repeated-answer-feature.png)
+- When the user enters a guess they already entered a message will be displayed that they already had this guess. This is done independently if the guess is correct or not.
+- The hint will not be shown again as this message does not take that much space and the hint should hence still be visible.
+
+#### Correct Answer - No Lives Left
+![Correct Answer - No Lives Left Image](docs/features/final-correct-answer-feature.png)
+- When the user enters their final correct guess the terminal will be cleared.
+- A winning statement will be displayed as well as further options for the user on how to proceed: Play again, Add lives left to the leaderboard or Exit.
+- When choosing playing again the user will be redirected to choose a category.
+
+#### Wrong Answer - No Lives Left
+![Wrong Answer - No Lives Left Image](docs/features/final-wrong-answer-feature.png)
+- When the user enters their final wrong guess the full hangman figure will be displayed.
+- The loosing statement will also reveal the correct movie title.
+- The user can then choose to return to the menu or exit the game.
+
 
 ## DATA MODEL
 
