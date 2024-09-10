@@ -15,7 +15,6 @@ Interested? Then check it out here: [Hang the man!](https://hang-the-man-3409a28
 - [USER EXPERIENCE (UX)](#user-experience-ux)
 - [FLOW CHART / DECISION TREE](#flow-chart--decision-tree)
 - [FEATURES](#features)
-- [DATA MODEL](#data-model)
 - [TESTING](#testing)
     - [User Stories Testing](#user-stories-testing)
     - [Fixed Bugs](#fixed-bugs)
@@ -231,6 +230,21 @@ DO I NEED THIS IF I DO NOT HAVE CLASSES???
 
 ## TESTING
 ### PEP8 
+No errors were returned for all python files from the [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/) testing:
+<details>
+<summary>run.py</summary>
+No errors or warnings.
+
+<img src="docs/pep8-runpy.png" alt="run.py PEP8 result">
+</details>
+<details>
+<summary>hangman_figure.py</summary>
+No errors or warnings.
+
+<img src="docs/pep8-hangmanpy.png" alt="hangman_figure.py PEP8 result">
+</details>
+
+
 
 ### Input Testing
 
