@@ -120,7 +120,7 @@ Final Look of the website/program before any input by the user has been entered:
 ![Leaderboard Section Image](docs/features/leaderboard-feature.png)
 - If the user chooses option 3, the terminal will be cleared and the leaderboard will be displayed.
 - The leaderboard is ordered according to how many lives are left and then alphabetically according to the username.
-- This was done by using the open source data analysis toolkit pandas. 
+- This is done by using the open source data analysis toolkit pandas. Pandas sorted and displayed the data from the spreadsheet into the leaderboard.
 - The leaderboard spreadsheet is accessed and used to keep the data of the user (username and score) via an API.
 - Below the leaderboard the user can once again choose to return to the main menu or exit the program.
 
@@ -201,10 +201,23 @@ Final Look of the website/program before any input by the user has been entered:
 
 
 ### Update Leaderboard
-#### Add Username
-#### Display Leaderboard
+![Enter Username Image](docs/features/username-feature.png)
+- After guessing the title correctly and choosing to add lives left to the leaderboard the user can enter their username.
+
+![Leaderboard Sheet Image](docs/features/scoreboard-sheet-feature.png)
+- The Goggle worksheet also has a leaderboard spreadsheet here the username and the lives left of the current user and previous users are storedan retrieved through an API.
+- As many names as people will play can hence be saved to the document. The leaderboard will always be updated as soon as it is called.
+
 #### Username Input Validation
+![Username Input Validation Image](docs/features/username-input-validation-feature.png)
+- As the username should max. be 15 characters long and should only consists out of letter from a to z, every other input is wrong.
+- No matter what a user enters only within the given rules the input is accepted, else an error will be shown and the option to enter a username again is given.
 - This message, as all error messages in this game, are printed out in red to indicate to the user that an error occured and their inputed data was invalid.
+
+#### Updated Leaderboard
+![Updated Leaderboard Image](docs/features/updated-leaderboard-feature.png)
+- With every new user the leaderboard will be updated when the user either choses it in the game menu or after winning a game.
+- The way the data is retrieved, displayed and what the user can do afterwards is the same as [above](#leaderboard).
 
 
 ## DATA MODEL
