@@ -110,7 +110,7 @@ Final Look of the website/program before any input by the user has been entered:
 ![How To Play Section Image](docs/features/how-to-play-feature.png)
 - If the user chooses option 2, the terminal will be cleared and the instructions with how this game will be played are displayed.
 - To, again, leave a more visually pleasing for the user the instructions are bordered by [ASCII-Art](https://www.asciiart.eu/art-and-design/borders) that should look familiar to a scroll.
-- Below the instructions the user can once again choose to return to the main menu or exit the program.
+- Below the instructions the user can once again choose to return to the main menu or exit the program with a "bye bye..." statement.
 
 #### How To Play - Input Validation
 ![How To Play Input Validation Image](docs/features/htp-input-validation-feature.png)
@@ -124,7 +124,7 @@ Final Look of the website/program before any input by the user has been entered:
 - The leaderboard is ordered according to how many lives are left and then alphabetically according to the username.
 - This is done by using the open source data analysis toolkit pandas. Pandas sorted and displayed the data from the spreadsheet into the leaderboard.
 - The leaderboard spreadsheet is accessed and used to keep the data of the user (username and score) via an API.
-- Below the leaderboard the user can once again choose to return to the main menu or exit the program.
+- Below the leaderboard the user can once again choose to return to the main menu or exit the program with a "bye bye..." statement.
 
 #### How To Play - Input Validation
 ![Leaderboard Input Validation Image](docs/features/leaderboard-input-validation-feature.png)
@@ -176,14 +176,14 @@ Final Look of the website/program before any input by the user has been entered:
 #### Correct Answer - No Lives Left
 ![Correct Answer - No Lives Left Image](docs/features/final-correct-answer-feature.png)
 - When the user enters their final correct guess the terminal will be cleared.
-- A winning statement will be displayed as well as further options for the user on how to proceed: Play again, Add lives left to the leaderboard or Exit.
+- A winning statement will be displayed as well as further options for the user on how to proceed: Play again, Add lives left to the leaderboard or Exit with a "bye bye..." statement.
 - When choosing playing again the user will be redirected to choose a category.
 
 #### Wrong Answer - No Lives Left
 ![Wrong Answer - No Lives Left Image](docs/features/final-wrong-answer-feature.png)
 - When the user enters their final wrong guess the full hangman figure will be displayed.
 - The loosing statement will also reveal the correct movie title.
-- The user can then choose to return to the menu or exit the game. As this game is over this attempt was chosen because the user might want to re-read the isntructions. Therefore they have the opportunity to go back to the menu.
+- The user can then choose to return to the menu or exit the game with a "bye bye..." statement. As this game is over this attempt was chosen because the user might want to re-read the isntructions. Therefore they have the opportunity to go back to the menu.
 
 #### Guess Input Validation
 ![Guess Input Validation Image](docs/features/guess-input-validation-feature.png)
@@ -318,15 +318,33 @@ The website was successfully tested on the following browsers:
 As I was able to get rid of other problems while creating the according function, so the bug was never committed in the first place.
 
 ### Known Bugs
-So far there are no known bugs
+So far there are no known bugs.
 
 
 ## TECHNOLOGIES USED
 ### Languages
+- Python
+- CSS (for centering the terminal)
+
+### Python Libraries
+- [os](https://docs.python.org/3/library/os.html) - Used to clear the terminal when displaying new content.
+- [gspread](https://docs.gspread.org/en/latest/) - Used to access and update data in Google spreadsheets.
+- [random](https://docs.python.org/3/library/random.html) - Used to get a random movie title from the spreadsheet.
+- [functools](https://docs.python.org/3/library/functools.html) - Used to to get rid of empty string values in list from spreadsheet.
+- [time](https://docs.python.org/3/library/time.html) - Used to delay some code for a few seconds, such as the bye bye statement.
+- [pandas](https://pandas.pydata.org/) - Used to display and sort leaderboard according to certain attributes.
+- [colorama](https://pypi.org/project/colorama/) - Used to give fore- and background color to certain parts of the code.
+- [google.oauth2.service_account](https://google-auth.readthedocs.io/en/master/reference/google.oauth2.service_account.html) - Used to set up the authentication needed to access the Google Cloud.
 
 
 ### Frameworks, Libraries and Programs used
 - [Am I Responsive](https://ui.dev/amiresponsive) Used for the mockup image.
+- [GitHub](https://GitHub.com/) - Used for version control.
+- [Gitpod](https://gitpod.io/) - IDE to develop the website.
+- [Lucid Chart](https://www.lucidchart.com/pages/) - Used to create a flow chart.
+- [Heroku](https://dashboard.heroku.com/) - Used to deploy the project.
+- [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/) - Used to validate the Python code.
+- Code Institute's Gitpod Template to generate IDE workspace.
 
 
 ## DEPLOYMENT
@@ -338,6 +356,11 @@ So far there are no known bugs
 
 
 ### Resources
+- Tutorials from Code Institute's lessons that we learned in the course of our diploma-education used to understand the basic concepts of Python. 
+
+- [Stack Overflow](https://stackoverflow.co/)
+
+- [W3Schools](https://www.w3schools.com/)
 
 
 ## ACKNOWLEDGEMENTS

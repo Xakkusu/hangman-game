@@ -6,7 +6,7 @@ import os
 import time
 import pandas as pd
 import colorama
-from colorama import Fore, Back, Style
+from colorama import Fore, Back
 from google.oauth2.service_account import Credentials
 from hangman_figure import HANGMAN_FIGURES
 
