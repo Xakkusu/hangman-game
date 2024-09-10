@@ -219,11 +219,20 @@ Final Look of the website/program before any input by the user has been entered:
 - With every new user the leaderboard will be updated when the user either choses it in the game menu or after winning a game.
 - The way the data is retrieved, displayed and what the user can do afterwards is the same as [above](#leaderboard).
 
+### Future Features
+- Allowing the user to enter possible titles as well.
+- Adding more categories.
+- Adding difficulty levels to the categories. 
+
 
 ## DATA MODEL
+DO I NEED THIS IF I DO NOT HAVE CLASSES???
+
 
 ## TESTING
+### PEP8 
 
+### Input Testing
 
 ### User Stories Testing
 #### First Time User Goals
