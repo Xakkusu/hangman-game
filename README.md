@@ -133,6 +133,18 @@ Final Look of the website/program before any input by the user has been entered:
 ![Leaderboard Input Validation Image](docs/features/leaderboard-input-validation-feature.png)
 - The exact same as the How To Play - Input Validation
 
+### Hangman Categories
+![Categories Section Image](docs/features/categories-feature.png)
+- If the user chooses option 1 three category options will be displayed for the user to choose from.
+
+#### Categories- Input Validation
+![Categories Input Validation Image](docs/features/categories-input-validation-feature.png)
+- If the user does not enter a number between 1 and 3 an Error Message will appear. This message repeats the input from the user and states that they will be given the chance to enter an input again.
+- This message, as all error messages in this game, are printed out in red to indicate to the user that an error occured and their inputed data was invalid.
+
+
+
+
 ## DATA MODEL
 
 ## TESTING
