@@ -126,7 +126,7 @@ Final Look of the website/program before any input by the user has been entered:
 
 #### How To Play - Input Validation
 ![Leaderboard Input Validation Image](docs/features/leaderboard-input-validation-feature.png)
-- The exact same as the How To Play - Input Validation
+- The exact same as the [How To Play - Input Validation](#how-to-play---input-validation)
 
 ### Hangman Categories
 ![Categories Section Image](docs/features/categories-feature.png)
@@ -181,7 +181,30 @@ Final Look of the website/program before any input by the user has been entered:
 ![Wrong Answer - No Lives Left Image](docs/features/final-wrong-answer-feature.png)
 - When the user enters their final wrong guess the full hangman figure will be displayed.
 - The loosing statement will also reveal the correct movie title.
-- The user can then choose to return to the menu or exit the game.
+- The user can then choose to return to the menu or exit the game. As this game is over this attempt was chosen because the user might want to re-read the isntructions. Therefore they have the opportunity to go back to the menu.
+
+#### Guess Input Validation
+![Guess Input Validation Image](docs/features/guess-input-validation-feature.png)
+- The user is only allowed to enter singular character form a-z at the time.
+- There will be a red error message for the user to see what they did wrong and how to correct it.
+- As the correct input is vital for the game the hint what type of input is needed is given.
+- This message, as all error messages in this game, are printed out in red to indicate to the user that an error occured and their inputed data was invalid.
+
+#### Final Correct Answer Input Validation
+![Final Correct Answer Input Validation Image](docs/features/final-correct-input-validation-feature.png)
+- If the user does not enter a number between 1 and 4 an Error Message will appear. This message repeats the input from the user and states that they will be given the chance to enter an input again.
+- This message, as all error messages in this game, are printed out in red to indicate to the user that an error occured and their inputed data was invalid.
+
+#### Final Wrong Answer Input Validation
+![Final Wrong Answer Input Validation Image](docs/features/final-wrong-input-validation-feature.png)
+- The exact same as the [How To Play - Input Validation](#how-to-play---input-validation)
+
+
+### Update Leaderboard
+#### Add Username
+#### Display Leaderboard
+#### Username Input Validation
+- This message, as all error messages in this game, are printed out in red to indicate to the user that an error occured and their inputed data was invalid.
 
 
 ## DATA MODEL
