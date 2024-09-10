@@ -37,9 +37,9 @@ Interested? Then check it out here: [Hang the man!](https://hang-the-man-3409a28
     - After viewing the instructions or leaderboard the user can return to the menu or exit the program
 - The user can choose to guess movie titles from the following categories: Horror, Thriller & Fantasy
 - The user has 8 lives, hence 8 chances, to guess the word
-- A hint is given at the beginning of the game as blank lines for each letter in the word
+- A hint/hidden word is given at the beginning of the game as blank lines for each letter in the word
 - The user has to guess one character at the time
-    - If the character is correct the hint will update with the location of the correct character and the user can guess again
+    - If the character is correct the hint/hidden word will update with the location of the correct character and the user can guess again
     - If the character is wrong the a stick figure will appear with a "wrong guess"-statement and the user can guess again
     - The stick figure will continue to grow into a hanged man the more wrong guesses were placed
 - When all characters are guessed a winning statement is shown and the user can decide on the following:
@@ -141,23 +141,23 @@ Final Look of the website/program before any input by the user has been entered:
 
 ### Game Section
 ![Game Section Image](docs/features/game-feature.png)
-- No matter which category the user chooses, the terminal will be cleared and a hint of lines appears.
+- No matter which category the user chooses, the terminal will be cleared and a hint/hidden word of lines appears.
 
 ![Catgeory Worksheet Image](docs/features/game-categories-worksheet-feature.png)
 - When the user enters the catageory Google Sheets were used to access the according sheet to the chosen category.
 
 ![Horror Worksheet Image](docs/features/game-horror-worksheet-feature.png)
 - This is done by Google Sheets APIs though the Goggle Clout Platform.
-- The data is stored in each sheet will be randomly chosen an stored in a variable as a list.
-- This list is converted into the underlined hint.
+- The data is stored in each sheet will be randomly chosen and stored in a variable as a list.
+- This list is converted into the underlined hint/hidden word.
 - The user is then asked to enter their first character guess.
 
 #### Correct Answer - Lives Left
 ![Correct Answer - Lives Left Image](docs/features/correct-answer-feature.png)
 - When the player enters a correct guess a statement that their answer was correct will be displayed.
-- The hint will be updated with the position of the guess. If the guess occurs multiple times in the word, it will be shown accordingly in the hint.
+- The hint/hidden word will be updated with the position of the guess. If the guess occurs multiple times in the word, it will be shown accordingly in the hint/hidden word.
 - Below that a list will appear to show which characters have been guessed so far. This list is indedpendent if the answer was wrong or right, this is solely done to show the user what was already guessed in case they have forgotten.
-- The updated hint will be in uppercase to give the user a better visualization of what movie title needs to be find out.
+- The updated hint/hidden word will be in uppercase to give the user a better visualization of what movie title needs to be find out.
 #### Wrong Answer - Lives Left
 ![Wrong Answer - Lives Left Image](docs/features/wrong-answer-feature.png)
 - When the player enters a wrong guess a statement that their answer was wrong will be displayed.
@@ -166,12 +166,12 @@ Final Look of the website/program before any input by the user has been entered:
 ![Wrong Answer 2 - Lives Left Image](docs/features/wrong-answer2-feature.png)
 - The more wrong guesses the user makes the more sticks will be "drawn" on to the figure.
 - As most people are familiar with the game it was chosen to not write how many lives are left with each wrong guess, as it is visualized through the stick figure.
-- The hint remains the same, the guesses character list will be updated.
+- The hint/hidden word remains the same, the guesses character list will be updated.
 
 #### Repeated Answer
 ![Repeated Answer Image](docs/features/repeated-answer-feature.png)
 - When the user enters a guess they already entered a message will be displayed that they already had this guess. This is done independently if the guess is correct or not.
-- The hint will not be shown again as this message does not take that much space and the hint should hence still be visible.
+- The hint/hidden word will not be shown again as this message does not take that much space and the hint/hidden word should hence still be visible.
 
 #### Correct Answer - No Lives Left
 ![Correct Answer - No Lives Left Image](docs/features/final-correct-answer-feature.png)
@@ -189,7 +189,7 @@ Final Look of the website/program before any input by the user has been entered:
 ![Guess Input Validation Image](docs/features/guess-input-validation-feature.png)
 - The user is only allowed to enter singular character form a-z at the time.
 - There will be a red error message for the user to see what they did wrong and how to correct it.
-- As the correct input is vital for the game the hint what type of input is needed is given.
+- As the correct input is vital for the game the hint/hidden word what type of input is needed is given.
 - This message, as all error messages in this game, are printed out in red to indicate to the user that an error occured and their inputed data was invalid.
 
 #### Final Correct Answer Input Validation
@@ -262,19 +262,63 @@ The website was successfully tested on the following browsers:
 
 ### User Stories Testing
 #### First Time User Goals
+- I want to take a a word guessing quiz - hangman
 
+    The user can start the hang man game as the very first option of the starting menu.
+- I want to understand the the program, its structure and how to play the game
+
+    Through the common structure found in various quiz and online hangman games most users should be already familiar with the game's set up. However, through the "How to Play?" Content the whole process of the game is easily explained step by step.
+- I want the quiz to be easy to use and navigate
+
+    All sentences, input commands, feedback statements and error messages are written in a simple language, as the quiz does not want the user to be overwhelmed when being tested. The user can return to the menu to get to the How to Play section.
+- I want to be able to be tested on different categories
+
+    The quiz offers three different movie title categories, all from the 200 most famous movies of each category.
+- I want to see how well I am doing during the game
+
+    The hangman figure, when guessing wrong, as well as filled out hints, when guessing correctly, give the user a clear indication on which path they are while trying to find out the title.
+- I want to take the quiz whenever, wherever
+
+    The user can take the game whenever they like on whichever browser they like, as long as they have internet connection.
 
 #### Returning User Goals
+- I want to be able to be tested on different categories
 
+    The quiz offers three different movie title categories, all from the 200 most famous movies of each category.
+- I want to be able to restart the game without reloading the page
+
+    At the end of a correct round the user can immediately start another round. At the end of a failed attempt the user can go back to the menu, if they want to, read through the How to Play section and try again.
+- I want to get different words to be tested on when retaking the game
+
+    The title to guess is randomly taken from 10 movie titles per category from the according spreadsheet.
 
 #### Frequent User Goals
+- I want to be able to be tested on different categories
+
+    The quiz offers three different movie title categories, all from the 200 most famous movies of each category.
+- I want to be able to restart the game without reloading the page
+
+    At the end of a correct round the user can immediately start another round. At the end of a failed attempt the user can go back to the menu, if they want to, read through the How to Play section and try again.
+- I want to get different words to be tested on when retaking the game
+
+    The title to guess is randomly taken from 10 movie titles per category from the according spreadsheet.
+- I want to save my best scores to a leaderboard to compete with other users
+
+    After winning a round the user can save their score (=lives left) and a username to the leaderboard spreadsheet. This can then even be accessed before starting a new round through the game menu option.
 
 
 ### Fixed Bugs
-1. 
+1. When running the hangman game itself the while loop would not stop when the 8 lives were up but rather was an endless loop. So the user could technically used endless tries.
+    - I mistook the hangman_index variable (which I also at that step falsly incremented, which was corrected in the same commit) for the variable which was part of the condition for the while loop. I added j += 1 to the correct indented position and the loop would stop after 8 lives were up.
+
+2. When a correctly guessed character was shown in the hint/hidden word only its first occurence was revealed even though the character occured multiple times in the movie title.
+    - I got together with other students that reviewed my previous codes and encountered the same problem, after some time and a lot of research we were able to come up with a solution.
+    - Instead of just using one index number I implemented a list of all occuring indexes on which the correct character occured. This list is looped through so every single occurence of the correctly guessed character was in the hint/hidden word.
+
+As I was able to get rid of other problems while creating the according function, so the bug was never committed in the first place.
 
 ### Known Bugs
-
+So far there are no known bugs
 
 
 ## TECHNOLOGIES USED
