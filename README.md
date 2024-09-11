@@ -58,7 +58,7 @@ Interested? Then check it out here: [Hang the man!](https://hang-the-man-3409a28
 ## USER EXPERIENCE (UX)
 #### First Time User Goals
 - I want to take a word guessing quiz - hangman
-- I want to understand the the program, its structure and how to play the game
+- I want to understand the program, its structure and how to play the game
 - I want the quiz to be easy to use and navigate
 - I want to be able to be tested on different categories
 - I want to see how well I am doing during the game
@@ -108,7 +108,7 @@ Final Look of the website/program before any input by the user has been entered:
 ### How To Play?
 ![How To Play Section Image](docs/features/how-to-play-feature.png)
 - If the user chooses option 2, the terminal will be cleared and the instructions with how this game will be played are displayed.
-- To, again, leave a more visually pleasing for the user the instructions are bordered by [ASCII-Art](https://www.asciiart.eu/art-and-design/borders) that should look familiar to a scroll.
+- To, again, be more visually pleasing to the user the instructions are bordered by [ASCII-Art](https://www.asciiart.eu/art-and-design/borders) that should look similar to a scroll.
 - Below the instructions the user can once again choose to return to the main menu or exit the program with a "bye bye..." statement.
 
 #### How To Play - Input Validation
@@ -125,7 +125,7 @@ Final Look of the website/program before any input by the user has been entered:
 - The leaderboard spreadsheet is accessed and used to keep the data of the user (username and score) via an API.
 - Below the leaderboard the user can once again choose to return to the main menu or exit the program with a "bye bye..." statement.
 
-#### How To Play - Input Validation
+#### Leaderboard - Input Validation
 ![Leaderboard Input Validation Image](docs/features/leaderboard-input-validation-feature.png)
 - The exact same as the [How To Play - Input Validation](#how-to-play---input-validation)
 
@@ -143,18 +143,18 @@ Final Look of the website/program before any input by the user has been entered:
 - No matter which category the user chooses, the terminal will be cleared and a hint/hidden word of lines appears.
 
 ![Category Worksheet Image](docs/features/game-categories-worksheet-feature.png)
-- When the user enters the category Google Sheets were used to access the according sheet to the chosen category.
+- When the user enters the category Google Sheets were used to access the according spreadsheet of the chosen category.
 
 ![Horror Worksheet Image](docs/features/game-horror-worksheet-feature.png)
-- This is done by Google Sheets APIs though the Goggle Clout Platform.
-- The data is stored in each sheet will be randomly chosen and stored in a variable as a list.
+- This is done by Google Sheets APIs through the Goggle Clout Platform.
+- The data is stored in each sheet, will be randomly chosen and stored in a variable as a list.
 - This list is converted into the underlined hint/hidden word.
 - The user is then asked to enter their first character guess.
 
 #### Correct Answer - Lives Left
 ![Correct Answer - Lives Left Image](docs/features/correct-answer-feature.png)
 - When the player enters a correct guess a statement that their answer was correct will be displayed.
-- The hint/hidden word will be updated with the position of the guess. If the guess occurs multiple times in the word, it will be shown accordingly in the hint/hidden word.
+- The hint/hidden word will be updated with the position of the guess. If the guess occurrs multiple times in the word, it will be shown accordingly in the hint/hidden word.
 - Below that a list will appear to show which characters have been guessed so far. This list is independent if the answer was wrong or right, this is solely done to show the user what was already guessed in case they have forgotten.
 - The updated hint/hidden word will be in uppercase to give the user a better visualisation of what movie title needs to be found out.
 #### Wrong Answer - Lives Left
@@ -188,7 +188,7 @@ Final Look of the website/program before any input by the user has been entered:
 ![Guess Input Validation Image](docs/features/guess-input-validation-feature.png)
 - The user is only allowed to enter singular character form a-z at the time.
 - There will be a red error message for the user to see what they did wrong and how to correct it.
-- As the correct input is vital for the game the hint/hidden word what type of input is needed is given.
+- As the correct input is vital for the game the hint of what type of input is needed is given.
 - This message, as all error messages in this game, are printed out in red to indicate to the user that an error occurred and their input data was invalid.
 
 #### Final Correct Answer Input Validation
@@ -206,7 +206,7 @@ Final Look of the website/program before any input by the user has been entered:
 - After guessing the title correctly and choosing to add lives left to the leaderboard the user can enter their username.
 
 ![Leaderboard Sheet Image](docs/features/scoreboard-sheet-feature.png)
-- The Goggle worksheet also has a leaderboard spreadsheet here the username and the lives left of the current user and previous users are stored and retrieved through an API.
+- The Goggle worksheet also has a leaderboard spreadsheet, here the username and the lives left of the current user and previous users are stored and retrieved through an API.
 - As many names as people will play can hence be saved to the document. The leaderboard will always be updated as soon as it is called.
 
 #### Username Input Validation
@@ -260,7 +260,7 @@ The website was successfully tested on the following browsers:
 - I want to take a word guessing quiz - hangman
 
     The user can start the hang-man game as the very first option of the starting menu.
-- I want to understand the the program, its structure and how to play the game
+- I want to understand the program, its structure and how to play the game
 
     Through the common structure found in various quiz and online hangman games most users should be already familiar with the game's set up. However, through the "How to Play?"-Content the whole process of the game is easily explained step by step.
 - I want the quiz to be easy to use and navigate
@@ -310,7 +310,7 @@ The website was successfully tested on the following browsers:
     - I got together with other students that reviewed my previous codes and encountered the same problem, after some time and a lot of research ([this cleared a lot up](https://stackoverflow.com/questions/44307988/find-all-occurrences-of-a-character-in-a-string)) we were able to come up with a solution. 
     - Instead of just using one index number I implemented a list of all occurring indexes on which the correct character occurred. This list is looped through so every single occurrence of the correctly guessed character was in the hint/hidden word.
 
-As I was able to get rid of other problems while creating the according function, so the bug was never committed in the first place.
+As I was able to get rid of other problems while creating the according function, thes bugs were never committed in the first place.
 
 ### Known Bugs
 So far there are no known bugs.
@@ -397,7 +397,7 @@ Clone repository:
 
 - [ASCII Art](https://www.asciiart.eu/art-and-design/borders) for the border art of my how to play section
 
-- To understand on how to get all occurrences of one character in a string I relied on the [Question](https://stackoverflow.com/questions/44307988/find-all-occurrences-of-a-character-in-a-string) from Piratenlulatsch on stackoverflow. The answers and follow-ups easily explained how to solve such a problem with as little code as possible.
+- To understand on how to get all occurrences of one character in a string I relied on the [Question](https://stackoverflow.com/questions/44307988/find-all-occurrences-of-a-character-in-a-string) from Piratenlulatsch on stackoverflow and on discussions with other students. The answers and follow-ups easily explained how to solve such a problem with as little code as possible.
 
 - To understand the concept of pandas and how to use it to sort and display data I relied on this [Guide to Sorting Data in Python](https://realpython.com/pandas-sort-python/) from Spencer Guy. Through this I was able to understand the content of [this website](https://pandas.pydata.org/docs/reference/frame.html) by pandas themselves about their DataFrames. With both I was able to sort and display the leaderboard according to my wishes even if I never worked with it beforehand.
 
