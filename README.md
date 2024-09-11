@@ -24,11 +24,10 @@ Interested? Then check it out here: [Hang the man!](https://hang-the-man-3409a28
     - [Known Bugs](#known-bugs)
 - [TECHNOLOGIES USED](#technologies-used)
     - [Languages](#languages)
+    - [Python Libraries](#python-libraries)
     - [Frameworks, Libraries and Programs used](#frameworks-libraries-and-programs-used)
 - [DEPLOYMENT](#deployment)
 - [CREDITS](#credits)
-    - [Media](#media)
-    - [Resources](#resources)
 - [ACKNOWLEDGEMENTS](#acknowledgements)
 
 
@@ -344,7 +343,46 @@ So far there are no known bugs.
 
 
 ## DEPLOYMENT
+This project was deployed using Code Institute's mock terminal for Heroku.
+1. Go on the [Heroku](https://dashboard.heroku.com/apps) website.
+2. Activate the Heroku Student pack.
+3. Choose the "Create new app" option on the dashboard.
+4. Give name "hang-the-man", select region and go on the "Create app" option.
+5. Go to the settings tab.
+6. Go on "Reveal Config Vars".
+7. Store all sensitive data such as my creds.json & port data.
+    - enter keys CREDS & PORT
+    - Enter content of creds.json as the CREDS' value
+    - Enter 8000 as the PORT's value
+8.  Go on the "Add buildbacks" option to build further dependencies.
+    - Select the python buildpack first!
+    - Select the node.js buildpack second!
+9. Go to the deploy tab
+10. Select Github as the deploxment method.
+11. Confirm the connection to github.
+12. Authorize correct repo to connect.
+13. Go on either "Enable Automatic" or on "Deploy Branch" to deploy the website.
+    - I selected "Deploy branch" while it is selected on main
+14. Go on "View" to see live project.
+15. On the live Website the program will start running automatically. If not go on the "Run Programm" button.
 
+
+The live link can be found here - [Hangman game](https://hang-the-man-3409a28c593c.herokuapp.com/)
+
+#### How to fork/clone the project locally on Github:
+
+Fork the repository:
+- Log in (or sign up) to Github.
+- Go to the repository for: Xakkusu/hangman-game.
+- Click the Fork button in the top right corner.
+
+Clone repository:
+1. Log in (or sign up) to GitHub.
+2. Go to the repository for: Xakkusu/hangman-game.
+3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
+4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
+5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
+6. A clone of the repository will now be created on your machine.
 
 
 ## CREDITS
