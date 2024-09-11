@@ -227,10 +227,6 @@ Final Look of the website/program before any input by the user has been entered:
 - Adding difficulty levels to the categories. 
 
 
-## DATA MODEL
-DO I NEED THIS IF I DO NOT HAVE CLASSES???
-
-
 ## TESTING
 ### PEP8 
 No errors were returned for all python files from the [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/) testing:
@@ -312,7 +308,7 @@ The website was successfully tested on the following browsers:
     - I mistook the hangman_index variable (which I also at that step falsly incremented, which was corrected in the same commit) for the variable which was part of the condition for the while loop. I added j += 1 to the correct indented position and the loop would stop after 8 lives were up.
 
 2. When a correctly guessed character was shown in the hint/hidden word only its first occurence was revealed even though the character occured multiple times in the movie title.
-    - I got together with other students that reviewed my previous codes and encountered the same problem, after some time and a lot of research we were able to come up with a solution.
+    - I got together with other students that reviewed my previous codes and encountered the same problem, after some time and a lot of research ([this cleared a lot up](https://stackoverflow.com/questions/44307988/find-all-occurrences-of-a-character-in-a-string)) we were able to come up with a solution. 
     - Instead of just using one index number I implemented a list of all occuring indexes on which the correct character occured. This list is looped through so every single occurence of the correctly guessed character was in the hint/hidden word.
 
 As I was able to get rid of other problems while creating the according function, so the bug was never committed in the first place.
@@ -352,15 +348,25 @@ So far there are no known bugs.
 
 
 ## CREDITS
-### Media
-
-
 ### Resources
-- Tutorials from Code Institute's lessons that we learned in the course of our diploma-education used to understand the basic concepts of Python. 
+- Tutorials from Code Institute's lessons that we learned in the course of our diploma-education used to understand the basic concepts of Python. Especially topics from the Love Sandwich project were helpful.
 
 - [Stack Overflow](https://stackoverflow.co/)
 
 - [W3Schools](https://www.w3schools.com/)
 
+- [ASCII Art](https://www.asciiart.eu/text-to-ascii-art) for the game title
+
+- [ASCII Art](https://www.asciiart.eu/art-and-design/borders) for the border art of my how to play section
+
+- To understand on how to get all occurences of one character in a string I relied on the [Question](https://stackoverflow.com/questions/44307988/find-all-occurrences-of-a-character-in-a-string) from Piratenlulatsch on stackoverflow. The answers and follow-ups easily expained on how to solve such a problem with as less code as possible.
+
+- To understand the concept of pandas and how to use it to sort and display data I relied on this [Guide to Sorting Data in Python](https://realpython.com/pandas-sort-python/) from Spencer Guy. Through this I was able to understand the content of [this website](https://pandas.pydata.org/docs/reference/frame.html) by pandas themselves about their DataFrames. With both I was able to sort and display the leaderboard according to my wishes even if I never worked with it beforehand.
+
+- To understand how to remove all empty string elements from a list I relied on this article [Python Remove Empty Strings from List](https://sparkbyexamples.com/python/python-remove-empty-strings-from-list/) by Malli. Through this I was able to only use the title itself and not empty values for the movie title I wanted to be guessed. 
 
 ## ACKNOWLEDGEMENTS
+- My mentor Antonio for their guidance and support.
+- All students with whom I was able to exchange ideas for our projects. A special thank goes to [Flo](https://github.com/FlorianS4) with whom I was able to bounce ideas back and forth & when I got stuck he helped me a lot with my problems about reoccuring characters and getting stuck in loops.
+- Code Institute for informative course material.
+- The Code Institute's Slack community for support and reviewing my project.

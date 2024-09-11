@@ -220,6 +220,9 @@ def guess_is_correct(guessed_character, data, checked_word, j):
     """
     Will use correct guess, check how often it is in title, and
     if it is the final correct guess
+    For finding all instances of a character in data, this helped:
+    https://stackoverflow.com/questions/44307988/
+    find-all-occurrences-of-a-character-in-a-string
     """
     print(Fore.BLACK + Back.WHITE
           + f"\nCorrect! {guessed_character} is in the movie title"
@@ -336,6 +339,8 @@ def update_leaderboard(worksheet):
     """
     Update the leaderboard according to the score
     and the name. Display it accordingly.
+    Guidance: https://realpython.com/pandas-sort-python/,
+    https://pandas.pydata.org/docs/reference/frame.html
     """
     os.system('cls||clear')
     user_data_all = worksheet.get_all_values()
