@@ -252,8 +252,10 @@ def guess_is_correct(guessed_character, data, checked_word, j):
             valid_choice = validate_menu_choice(round_finished,
                                                 ["1", "2", "3"])
         if int(round_finished) == 1:
+            os.system('cls||clear')
             try_again()
         elif int(round_finished) == 2:
+            os.system('cls||clear')
             add_to_scorboard(j)
         elif int(round_finished) == 3:
             time.sleep(2)
@@ -370,6 +372,7 @@ def get_back_to_menu():
     instruction_choice_user = input("Enter here: \n")
     while True:
         if instruction_choice_user.lower() == "menu":
+            os.system('cls||clear')
             game_menu()
             break
         elif instruction_choice_user.lower() == "exit":

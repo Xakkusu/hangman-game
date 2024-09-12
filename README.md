@@ -310,6 +310,8 @@ The website was successfully tested on the following browsers:
     - I got together with other students that reviewed my previous codes and encountered the same problem, after some time and a lot of research ([this cleared a lot up](https://stackoverflow.com/questions/44307988/find-all-occurrences-of-a-character-in-a-string)) we were able to come up with a solution. 
     - Instead of just using one index number I implemented a list of all occurring indexes on which the correct character occurred. This list is looped through so every single occurrence of the correctly guessed character was in the hint/hidden word.
 
+
+
 As I was able to get rid of other problems while creating the according function, thes bugs were never committed in the first place.
 
 ### Known Bugs
