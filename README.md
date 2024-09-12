@@ -310,7 +310,15 @@ The website was successfully tested on the following browsers:
     - I got together with other students that reviewed my previous codes and encountered the same problem, after some time and a lot of research ([this cleared a lot up](https://stackoverflow.com/questions/44307988/find-all-occurrences-of-a-character-in-a-string)) we were able to come up with a solution. 
     - Instead of just using one index number I implemented a list of all occurring indexes on which the correct character occurred. This list is looped through so every single occurrence of the correctly guessed character was in the hint/hidden word.
 
-
+3. After guessing a title three times and retrying the game each time an error would occurr and the game would crash.
+    <details>
+    <summary>Error Message</summary>
+    <img src="docs/error-a.png" alt="error img 1">
+    <img src="docs/error-b.png" alt="error img 2">
+    <img src="docs/error-c.png" alt="error img 3">
+    <img src="docs/error-d.png" alt="error img 4">
+    </details>
+    - as the error message was pretty long and confusing about which line was the problem as well as this error only occurring when retaking the quiz multiple times, I decided to clear the terminal after choosing to take the quiz again. This immediately solved the bug and now the user can win/loose as many rounds as they like and retake it as many times as they like.
 
 As I was able to get rid of other problems while creating the according function, thes bugs were never committed in the first place.
 
