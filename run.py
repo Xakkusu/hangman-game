@@ -291,6 +291,7 @@ def try_again():
     At the end of the game the user can restart the game
     from the choosing topic
     """
+    os.system('cls||clear')
     category = choose_game_category()
     game_data = get_hangman_data(category)
     play_game(game_data)
