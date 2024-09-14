@@ -177,10 +177,13 @@ def play_game(data):
     os.system('cls||clear')
 
     print("Let's start\nGuess the following word:")
+    first_word = ""
     blank_string = ""
     for i in data:
+        first_word += "_ "
         blank_string += "_"
-    print("     " + blank_string + "\n")
+
+    print("     " + first_word + "\n")
 
     guessed_list = []
     j = 0
@@ -235,7 +238,8 @@ def guess_is_correct(guessed_character, data, checked_word, j):
     for i in index_checked_word:
         checked_word_list[i] = guessed_character.upper()
     checked_word = "".join(checked_word_list)
-    print(checked_word)
+    checked_word_to_guess = " ".join(checked_word_list)
+    print(checked_word_to_guess)
 
     if checked_word == "".join(data).upper():
         os.system('cls||clear')
@@ -284,7 +288,7 @@ def guess_is_wrong(guessed_character, HANGMAN_FIGURES, data,
               + f" in the movie title\n" + Fore.RESET)
         print("     " + HANGMAN_FIGURES[hangman_index])
         hangman_index += 1
-        print(checked_word)
+        print(" ".join(checked_word))
     return hangman_index
 
 
